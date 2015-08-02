@@ -1,0 +1,16 @@
+Package: syllable
+Title: A Small Collection of Syllable Counting Functions
+Version: 0.0.1
+Authors@R: c(person("Tyler", "Rinker", email = "tyler.rinker@gmail.com", role = c("aut", "cre")))
+Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
+Description: Tools for counting syllables and polysyllables.  The tools rely
+             primarily on a 'data.table' hash table lookup, resulting in fast
+             syllable counting.
+Depends: R (>= 3.2.1)
+Suggests: testthat
+Imports: data.table
+Date: 2015-08-01
+License: GPL-2
+LazyData: TRUE
+Roxygen: list(wrap = FALSE)
+
