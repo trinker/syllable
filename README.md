@@ -9,7 +9,6 @@ public.](http://www.repostatus.org/badges/0.1.0/wip.svg)](http://www.repostatus.
 Status](https://travis-ci.org/trinker/syllable.svg?branch=master)](https://travis-ci.org/trinker/syllable)
 [![Coverage
 Status](https://coveralls.io/repos/trinker/syllable/badge.svg?branch=master)](https://coveralls.io/r/trinker/syllable?branch=master)
-
 <a href="https://img.shields.io/badge/Version-0.0.1-orange.svg"><img src="https://img.shields.io/badge/Version-0.0.1-orange.svg" alt="Version"/></a>
 </p>
 **syllable** is a small collection of tools for counting syllables and
