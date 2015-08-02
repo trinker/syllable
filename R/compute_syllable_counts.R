@@ -17,7 +17,8 @@
 #' stats::setNames(compute_syllable_counts(terms), terms)
 compute_syllable_counts <- function(x) {
 
-    m <- gsub("e{1,2}ing", "XX", tolower(x))
+    m <- gsub("[ye]{1,2}ing", "XX", tolower(x))
+    m <- gsub("ie(st|r)$", "XX", m)
     m <- gsub("([aeiouy][^td]*?)ed$", "\\1", m)
     m <- gsub("ely$", "ly", m)
     m <- gsub("([aeiouy])le(s??)$", "\\1l", m)
