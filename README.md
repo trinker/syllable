@@ -11,9 +11,12 @@ Status](https://travis-ci.org/trinker/syllable.svg?branch=master)](https://travi
 Status](https://coveralls.io/repos/trinker/syllable/badge.svg?branch=master)](https://coveralls.io/r/trinker/syllable?branch=master)
 <a href="https://img.shields.io/badge/Version-0.0.1-orange.svg"><img src="https://img.shields.io/badge/Version-0.0.1-orange.svg" alt="Version"/></a>
 </p>
+<img src="inst/syllable_logo/r_syllable.png" width="200" alt="qdapRegex Logo">
+
 **syllable** is a small collection of tools for counting syllables and
-polysyllables. The tools rely primarily on a 'data.table' hash table
-lookup, resulting in fast syllable counting.
+polysyllables. The tools rely primarily on
+[**data.table**](https://cran.r-project.org/web/packages/data.table/index.html)
+hash table lookups, resulting in fast syllable counting.
 
 
 Table of Contents
