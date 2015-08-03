@@ -18,6 +18,7 @@
 compute_syllable_counts <- function(x) {
 
     m <- gsub("[ye]{1,2}ing", "XX", tolower(x))
+    m <- gsub("'s", "", m)
     m <- gsub("ie(st|r)$", "XX", m)
     m <- gsub("([aeiouy][^td]*?)ed$", "\\1", m)
     m <- gsub("ely$", "ly", m)
