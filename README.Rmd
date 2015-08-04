@@ -25,6 +25,34 @@ verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg
 **syllable** is a small collection of tools for counting syllables and polysyllables.  The tools rely 
 primarily on [**data.table**](https://cran.r-project.org/web/packages/data.table/index.html) hash table lookups, resulting in fast syllable counting.
 
+The main functions follow the format of `action_object`.  
+
+## Actions
+
+The following table outlines the actions.  Example Output correspond to this string: `"I like chicken sandwiches."`.
+
+
+| Action       | Description                | Returns               | Example Output              |
+|--------------|----------------------------|-----------------------|-----------------------------|
+| `count`      | One integer per word       | A vector per string   | 1, 1, 2, 3                  |
+| `sum`        | Sum of syllable counts     | An integer per string | 7                           |
+| `tally`\*      | Sum of syllable attributes | An integer per string | pollysyllable tallies = 1   |
+
+\* The addition of `_mono`, `_di`, `_poly` `_short` (monosyllabic + disyllabic), or `_both` to `tally` allows the user specify what syllable attribute is being tallied.
+
+## Objects 
+
+The following table outlines the objects acted upon:
+
+| Object       | Description                     | Example                        |
+|--------------|---------------------------------|--------------------------------|
+| `string`     | A character string              | `"I like chicken sandwiches."` |
+| `vector`\*   | A vector of character strings   | `c("I like it.", "Look out!")` |
+
+\* The addition of `_by` to `vector` allows the user to aggregate by one or more vectors of grouping variables.
+
+
+
 # Installation
 
 To download the development version of **syllable**:

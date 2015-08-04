@@ -18,10 +18,85 @@ polysyllables. The tools rely primarily on
 [**data.table**](https://cran.r-project.org/web/packages/data.table/index.html)
 hash table lookups, resulting in fast syllable counting.
 
+The main functions follow the format of `action_object`.
+
+Actions
+-------
+
+The following table outlines the actions. Example Output correspond to
+this string: `"I like chicken sandwiches."`.
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Action</th>
+<th align="left">Description</th>
+<th align="left">Returns</th>
+<th align="left">Example Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>count</code></td>
+<td align="left">One integer per word</td>
+<td align="left">A vector per string</td>
+<td align="left">1, 1, 2, 3</td>
+</tr>
+<tr class="even">
+<td align="left"><code>sum</code></td>
+<td align="left">Sum of syllable counts</td>
+<td align="left">An integer per string</td>
+<td align="left">7</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>tally</code>*</td>
+<td align="left">Sum of syllable attributes</td>
+<td align="left">An integer per string</td>
+<td align="left">pollysyllable tallies = 1</td>
+</tr>
+</tbody>
+</table>
+
+\* The addition of `_mono`, `_di`, `_poly` `_short` (monosyllabic +
+disyllabic), or `_both` to `tally` allows the user specify what syllable
+attribute is being tallied.
+
+Objects
+-------
+
+The following table outlines the objects acted upon:
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Object</th>
+<th align="left">Description</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>string</code></td>
+<td align="left">A character string</td>
+<td align="left"><code>&quot;I like chicken sandwiches.&quot;</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>vector</code>*</td>
+<td align="left">A vector of character strings</td>
+<td align="left"><code>c(&quot;I like it.&quot;, &quot;Look out!&quot;)</code></td>
+</tr>
+</tbody>
+</table>
+
+\* The addition of `_by` to `vector` allows the user to aggregate by one
+or more vectors of grouping variables.
+
 
 Table of Contents
 ============
 
+-   [Actions](#actions)
+-   [Objects](#objects)
 -   [Installation](#installation)
 -   [Contact](#contact)
 

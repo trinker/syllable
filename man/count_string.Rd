@@ -2,7 +2,7 @@
 % Please edit documentation in R/count_string.R
 \name{count_string}
 \alias{count_string}
-\title{String Syllables Counts}
+\title{String Syllable Counts}
 \usage{
 count_string(x, ...)
 }

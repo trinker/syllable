@@ -1,4 +1,4 @@
-#' String Syllables Counts
+#' String Syllable Counts
 #'
 #' Syllable counts for the words in a single string.
 #'

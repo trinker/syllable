@@ -2,6 +2,8 @@
 
 export(compute_syllable_counts)
 export(count_string)
+export(count_vector)
 export(lookup_syllable_counts)
 export(sum_string)
+export(sum_vector)
 importFrom(data.table,setDT)
