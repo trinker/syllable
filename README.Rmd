@@ -12,6 +12,7 @@ regex <- "(^Version:\\s+)(\\d+\\.\\d+\\.\\d+)"
 loc <- grep(regex, desc)
 ver <- gsub(regex, "\\2", desc[loc])
 verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg"><img src="https://img.shields.io/badge/Version-%s-orange.svg" alt="Version"/></a></p>', ver, ver)
+pacman::p_load(syllable)
 ````
 
 [![Project Status: Wip - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/0.1.0/wip.svg)](http://www.repostatus.org/#wip)
@@ -52,6 +53,14 @@ The following table outlines the objects acted upon:
 \* The addition of `_by` to `vector` allows the user to aggregate by one or more vectors of grouping variables.
 
 
+## Putting It Together
+
+The function `count_vector` will provide a vector of integer counts for each word in a string.  For this reason of integer vector counts. 
+
+```{r}
+count_vector(c("I like it.", "Look out!"))
+```
+Each of the main functions is optimized to do its task efficiently.  While one could use `sum(count_vector(x))` and achieve the same results as `sum_vector(x)` it would be less efficeint.  
 
 # Installation
 

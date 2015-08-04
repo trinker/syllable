@@ -91,12 +91,31 @@ The following table outlines the objects acted upon:
 \* The addition of `_by` to `vector` allows the user to aggregate by one
 or more vectors of grouping variables.
 
+Putting It Together
+-------------------
+
+The function `count_vector` will provide a vector of integer counts for
+each word in a string. For this reason of integer vector counts.
+
+    count_vector(c("I like it.", "Look out!"))
+
+    ## $`1`
+    ## [1] 1 1 1
+    ## 
+    ## $`2`
+    ## [1] 1 1
+
+Each of the main functions is optimized to do its task efficiently.
+While one could use `sum(count_vector(x))` and achieve the same results
+as `sum_vector(x)` it would be less efficeint.
+
 
 Table of Contents
 ============
 
 -   [Actions](#actions)
 -   [Objects](#objects)
+-   [Putting It Together](#putting-it-together)
 -   [Installation](#installation)
 -   [Contact](#contact)
 
