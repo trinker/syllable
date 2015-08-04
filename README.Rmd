@@ -38,7 +38,7 @@ The following table outlines the actions.  Example Output correspond to this str
 | `sum`        | Sum of syllable counts     | An integer per string | 7                           |
 | `tally`\*      | Sum of syllable attributes | An integer per string | pollysyllable tallies = 1   |
 
-\* The addition of `_mono`, `_di`, `_poly` `_short` (monosyllabic + disyllabic), or `_both` to `tally` allows the user specify what syllable attribute is being tallied.
+\* The addition of `_mono`, `_di`, `_poly` `_short` (monosyllabic + disyllabic), or `_both` (short & pollysyllabic) to `tally` allows the user specify what syllable attribute is being tallied.
 
 ## Objects 
 

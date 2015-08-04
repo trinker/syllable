@@ -58,8 +58,8 @@ this string: `"I like chicken sandwiches."`.
 </table>
 
 \* The addition of `_mono`, `_di`, `_poly` `_short` (monosyllabic +
-disyllabic), or `_both` to `tally` allows the user specify what syllable
-attribute is being tallied.
+disyllabic), or `_both` (short & pollysyllabic) to `tally` allows the
+user specify what syllable attribute is being tallied.
 
 Objects
 -------

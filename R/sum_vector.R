@@ -19,6 +19,8 @@
 #' sum_vector(presidential_debates_2012$dialogue)
 sum_vector <- function(x, ...){
 
+    count <- element_id <- NULL
+
     long_dat <- data.frame(
         element_id = add_row_id(count_row_length(x)),
         count = syllable_count_long_vector(x)
