@@ -4,7 +4,7 @@
 #'
 #' @param x A character vector.
 #' @param \ldots ignored
-#' @return Returns a single integer of the total number of syllables in the string.
+#' @return Returns a single integer of the total number of monosyllables in the string.
 #' @export
 #' @examples
 #' tally_mono_string("I like chicken and beans!")

@@ -12,7 +12,7 @@ tally_mono_string(x, ...)
 \item{\ldots}{ignored}
 }
 \value{
-Returns a single integer of the total number of syllables in the string.
+Returns a single integer of the total number of monosyllables in the string.
 }
 \description{
 Monosyllabic word tallies for the words in a string.
