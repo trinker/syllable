@@ -2,7 +2,7 @@
 % Please edit documentation in R/tally_poly_string.R
 \name{tally_poly_string}
 \alias{tally_poly_string}
-\title{String Syllable Tally of Polyllabic Words}
+\title{String Syllable Tally of Polysyllabic Words}
 \usage{
 tally_poly_string(x, ...)
 }
@@ -16,7 +16,7 @@ Returns a single integer of the total number of polysyllables in the
 string.
 }
 \description{
-Polyllabic word tallies for the words in a string.
+Polysyllabic word tallies for the words in a string.
 }
 \examples{
 tally_poly_string("I like generalized chicken and tarnishing hotdogs!")

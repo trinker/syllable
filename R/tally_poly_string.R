@@ -1,6 +1,6 @@
-#' String Syllable Tally of Polyllabic Words
+#' String Syllable Tally of Polysyllabic Words
 #'
-#' Polyllabic word tallies for the words in a string.
+#' Polysyllabic word tallies for the words in a string.
 #'
 #' @param x A character vector.
 #' @param \ldots ignored
