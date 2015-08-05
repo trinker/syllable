@@ -23,7 +23,7 @@ Syllable sums for the words in the vector(s) of strings for grouping variables.
 }
 \examples{
 dat <- data.frame(
-   text = c("I like chicken.", "I want eggs benidict for breakfast.", "Really?"),
+   text = c("I like chicken.", "I want eggs benedict for breakfast.", "Really?"),
    group = c("A", "B", "A")
 )
 sum_vector_by(dat$text, dat$group)

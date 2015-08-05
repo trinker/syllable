@@ -16,7 +16,7 @@ Returns a single integer of the total number of non-polysyllables in
 the string.
 }
 \description{
-Non-Polysyllabic word tallies for the words in a string.
+Non-polysyllabic word tallies for the words in a string.
 }
 \examples{
 tally_short_string("I like excellent chicken and blah hotdogs!")

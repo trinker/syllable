@@ -1,6 +1,6 @@
 #' String Syllable Tally of Non-Polysyllabic (< 3 syllables) Words
 #'
-#' Non-Polysyllabic word tallies for the words in a string.
+#' Non-polysyllabic word tallies for the words in a string.
 #'
 #' @param x A character vector.
 #' @param \ldots ignored

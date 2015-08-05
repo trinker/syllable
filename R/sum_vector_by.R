@@ -11,7 +11,7 @@
 #' @export
 #' @examples
 #' dat <- data.frame(
-#'    text = c("I like chicken.", "I want eggs benidict for breakfast.", "Really?"),
+#'    text = c("I like chicken.", "I want eggs benedict for breakfast.", "Really?"),
 #'    group = c("A", "B", "A")
 #' )
 #' sum_vector_by(dat$text, dat$group)
