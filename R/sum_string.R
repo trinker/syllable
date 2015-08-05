@@ -13,7 +13,7 @@ sum_string <- function(x, ...){
 
     if (length(x) > 1) {
         stop("`count_string` operates on a string.\n",
-        "Consider using `count_vector` instead")
+        "Consider using `sum_vector` instead")
     }
 
     sum(syllable_count_long_vector(x), na.rm = TRUE)
