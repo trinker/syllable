@@ -9,6 +9,7 @@
 #' @return Returns a \code{\link[base]{data.frame}} (\code{\link[data.table]{data.table}}) of
 #' syllable sums by grouping variable.
 #' @export
+#' @importFrom data.table .SD
 #' @examples
 #' dat <- data.frame(
 #'    text = c("I like chicken.", "I want eggs benedict for breakfast.", "Really?"),

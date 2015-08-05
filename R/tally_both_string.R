@@ -1,11 +1,12 @@
-#' String Syllable Tally of Non-Polysyllabic and Polysyllabic Words
+#' String Syllable Tally of Short-syllabic and Poly-syllabic Words
 #'
-#' Non-polysyllabic and polysyllabic word tallies for the words in a string.
+#' Short-syllabic (< 3 syllables) and poly-syllabic word tallies for the words
+#' in a string.
 #'
 #' @param x A character vector.
 #' @param \ldots ignored
 #' @return Returns a two integer vector of the total number of non-polysyllables
-#' (non) and polysyllables (poly) in the string.
+#' (short) and polysyllables (poly) in the string.
 #' @export
 #' @examples
 #' tally_both_string("I like excellent chicken and mediocre hotdogs!")
@@ -18,6 +19,6 @@ tally_both_string <- function(x, ...){
     }
 
     poly <- syllable_count_long_vector(x) > 2
-    c(non = sum(!poly, na.rm = TRUE), poly = sum(poly, na.rm = TRUE))
+    c(short = sum(!poly, na.rm = TRUE), poly = sum(poly, na.rm = TRUE))
 }
 

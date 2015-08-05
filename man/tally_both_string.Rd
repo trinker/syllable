@@ -2,7 +2,7 @@
 % Please edit documentation in R/tally_both_string.R
 \name{tally_both_string}
 \alias{tally_both_string}
-\title{String Syllable Tally of Non-Polysyllabic and Polysyllabic Words}
+\title{String Syllable Tally of Short-syllabic and Poly-syllabic Words}
 \usage{
 tally_both_string(x, ...)
 }
@@ -13,10 +13,11 @@ tally_both_string(x, ...)
 }
 \value{
 Returns a two integer vector of the total number of non-polysyllables
-(non) and polysyllables (poly) in the string.
+(short) and polysyllables (poly) in the string.
 }
 \description{
-Non-polysyllabic and polysyllabic word tallies for the words in a string.
+Short-syllabic (< 3 syllables) and poly-syllabic word tallies for the words
+in a string.
 }
 \examples{
 tally_both_string("I like excellent chicken and mediocre hotdogs!")

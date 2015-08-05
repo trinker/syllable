@@ -8,7 +8,6 @@
 #' @param \ldots ignored
 #' @return Returns a named list of vectors of integer counts for each grouping variable.
 #' @export
-#' @importFrom data.table .SD
 #' @examples
 #' dat <- data.frame(
 #'    text = c("I like chicken.", "I want eggs benidict for breakfast.", "Really?"),
