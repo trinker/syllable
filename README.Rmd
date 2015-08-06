@@ -18,7 +18,7 @@ pacman::p_load(syllable)
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/trinker/syllable.svg?branch=master)](https://travis-ci.org/trinker/syllable)
 [![Coverage Status](https://coveralls.io/repos/trinker/syllable/badge.svg?branch=master)](https://coveralls.io/r/trinker/syllable?branch=master)
-`r verbadge`
+[![DOI](https://zenodo.org/badge/5398/trinker/syllable.svg)](https://zenodo.org/badge/latestdoi/5398/trinker/syllable)`r verbadge`
 
 <img src="inst/syllable_logo/r_syllable.png" width="200" alt="qdapRegex Logo">  
 
