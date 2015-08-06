@@ -1,7 +1,7 @@
 #' Vector Tally of Short-Syllabic and Poly-Syllabic Words
 #'
-#' Short-syllabic (< 3 syllables) and poy-syllabic word tallies for the words in
-#' a vector of strings.
+#' Short-syllabic (< 3 syllables) and poly-syllabic (>= 3 syllables) word
+#' tallies for the words in a vector of strings.
 #'
 #' @param x A character vector.
 #' @param \ldots ignored
@@ -25,5 +25,6 @@ tally_both_vector <- function(x, ...){
 
     data.table::setDT(long_dat)
     data.table::setkey(long_dat, "element_id")
-    long_dat[, list(short = sum(count < 3), poly = sum(count > 2)), by=element_id][,element_id:=NULL]
+    long_dat[, list(short = sum(count < 3, na.rm = TRUE),
+        poly = sum(count > 2, na.rm = TRUE)), by=element_id][,element_id:=NULL]
 }

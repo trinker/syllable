@@ -16,10 +16,10 @@ of 1 or more grouping variables.}
 }
 \value{
 Returns a \code{\link[base]{data.frame}} (\code{\link[data.table]{data.table}}) of
-syllable sums by grouping variable.
+syllable sums (count) by grouping variable.
 }
 \description{
-Syllable sums for the words in the vector(s) of strings for grouping variables.
+Syllable sums for the words in the vectors of strings by grouping variables.
 }
 \examples{
 dat <- data.frame(

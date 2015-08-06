@@ -24,5 +24,5 @@ tally_short_vector <- function(x, ...){
     data.table::setDT(long_dat)
     data.table::setkey(long_dat, "element_id")
 
-    long_dat[, sum(count < 3), by=element_id][[2]]
+    long_dat[, sum(count < 3, na.rm = TRUE), by=element_id][[2]]
 }

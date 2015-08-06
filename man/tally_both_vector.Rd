@@ -17,8 +17,8 @@ Returns a two column \code{\link[base]{data.frame}}
 short syllable (short) and poly syllable (poly) words for each string in the vector.
 }
 \description{
-Short-syllabic (< 3 syllables) and poy-syllabic word tallies for the words in
-a vector of strings.
+Short-syllabic (< 3 syllables) and poly-syllabic (>= 3 syllables) word
+tallies for the words in a vector of strings.
 }
 \examples{
 sents <- c("I like excellent chicken.", "I want eggs benedict for Festivus.")

@@ -82,3 +82,7 @@ syllable_count_long_vector <- function(x){
     counts
 
 }
+
+char_count <- function(x) stringi::stri_count_boundaries(gsub("[^[:alnum:]]", "", x), type="character")
+
+

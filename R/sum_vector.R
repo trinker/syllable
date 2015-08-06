@@ -29,7 +29,7 @@ sum_vector <- function(x, ...){
     data.table::setDT(long_dat)
     data.table::setkey(long_dat, "element_id")
 
-    long_dat[, sum(count), by=element_id][[2]]
+    long_dat[, sum(count, na.rm = TRUE), by=element_id][[2]]
 }
 
 
