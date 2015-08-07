@@ -1,8 +1,6 @@
 syllable
 ============
 
-        by Grouping Variable(s)
-    -   Readability Word Statistics By Grouping Variable(s)
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
@@ -34,7 +32,8 @@ Table of Contents
     -   [Count Syllables In a String](#count-syllables-in-a-string)
     -   [Count Syllables In a Vector of Strings](#count-syllables-in-a-vector-of-strings)
     -   [Sum the Syllables In a Vector of Strings by Grouping Variable(s)](#sum-the-syllables-in-a-vector-of-strings-by-grouping-variable(s))
-    -   [Tally the Short- and Poly-Syllabic Words In a Vector of Strings](#tally-the-short--and-poly-syllabic-words-in-a-vector-of-strings)
+    -   [Tally the Short/Poly-Syllabic Words by Group(s)](#tally-the-shortpoly-syllabic-words-by-group(s))
+    -   [Readability Word Statistics by Grouping Variable(s)](#readability-word-statistics-by-grouping-variable(s))
 
 Main Functions
 ============
@@ -136,7 +135,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Thu Aug 06 22:21:13 2015 -->
+<!-- Thu Aug 06 22:36:37 2015 -->
 <table>
 <tr>
 <td>
@@ -296,8 +295,8 @@ Sum the Syllables In a Vector of Strings by Grouping Variable(s)
     ## 1:     A       4     7
     ## 2:     B       6     9
 
-Tally the Short- and Poly-Syllabic Words In a Vector of Strings by Grouping Variable(s)
----------------------------------------------------------------------------------------
+Tally the Short/Poly-Syllabic Words by Group(s)
+-----------------------------------------------
 
     dat <- data.frame(
        text = c("I like excellent chicken.", "I want eggs benedict now.", "Really?"),
@@ -319,7 +318,7 @@ Tally the Short- and Poly-Syllabic Words In a Vector of Strings by Grouping Vari
     ## 5:  QUESTION     583   486   97
     ## 6: SCHIEFFER    1445  1289  156
 
-Readability Word Statistics By Grouping Variable(s)
+Readability Word Statistics by Grouping Variable(s)
 ---------------------------------------------------
 
     with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))

@@ -133,7 +133,7 @@ dat <- data.frame(
 sum_vector_by(dat$text, dat$group)
 ```
 
-## Tally the Short- and Poly-Syllabic Words In a Vector of Strings by Grouping Variable(s)
+## Tally the Short/Poly-Syllabic Words by Group(s)
 
 ```{r}
 dat <- data.frame(
@@ -145,7 +145,7 @@ tally_both_vector_by(dat$text, dat$group)
 with(presidential_debates_2012, tally_both_vector_by(dialogue, person))
 ```
 
-## Readability Word Statistics By Grouping Variable(s)
+## Readability Word Statistics by Grouping Variable(s)
 
 ```{r}
 with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
