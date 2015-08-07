@@ -1,6 +1,8 @@
 syllable
 ============
 
+        by Grouping Variable(s)
+    -   Readability Word Statistics By Grouping Variable(s)
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
@@ -29,6 +31,10 @@ Table of Contents
 -   [Installation](#installation)
 -   [Contact](#contact)
 -   [Examples](#examples)
+    -   [Count Syllables In a String](#count-syllables-in-a-string)
+    -   [Count Syllables In a Vector of Strings](#count-syllables-in-a-vector-of-strings)
+    -   [Sum the Syllables In a Vector of Strings by Grouping Variable(s)](#sum-the-syllables-in-a-vector-of-strings-by-grouping-variable(s))
+    -   [Tally the Short- and Poly-Syllabic Words In a Vector of Strings](#tally-the-short--and-poly-syllabic-words-in-a-vector-of-strings)
 
 Main Functions
 ============
@@ -130,7 +136,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Thu Aug 06 22:07:29 2015 -->
+<!-- Thu Aug 06 22:20:03 2015 -->
 <table>
 <tr>
 <td>
@@ -239,3 +245,93 @@ You are welcome to:
 
 Examples
 ========
+
+The following examples demonstrate the functionality of a select sample
+of **syllable** functions.
+
+Count Syllables In a String
+---------------------------
+
+Counts the number of syllables for each word in a string.
+
+    count_string("I like chicken and eggs for breakfast")
+
+    ## [1] 1 1 2 1 1 1 2
+
+Count Syllables In a Vector of Strings
+--------------------------------------
+
+    sents <- c("I like chicken.", "I want eggs benidict for breakfast.")
+    count_vector(sents)
+
+    ## $`1`
+    ## [1] 1 1 2
+    ## 
+    ## $`2`
+    ## [1] 1 1 1 3 1 2
+
+    Map(function(x, y) setNames(x, y),
+       count_vector(sents),
+       strsplit(gsub("[^a-z ]", "", tolower(sents)), "\\s+")
+    )
+
+    ## $`1`
+    ##       i    like chicken 
+    ##       1       1       2 
+    ## 
+    ## $`2`
+    ##         i      want      eggs  benidict       for breakfast 
+    ##         1         1         1         3         1         2
+
+Sum the Syllables In a Vector of Strings by Grouping Variable(s)
+----------------------------------------------------------------
+
+    dat <- data.frame(
+       text = c("I like chicken.", "I want eggs benedict for breakfast.", "Really?"),
+       group = c("A", "B", "A")
+    )
+    sum_vector_by(dat$text, dat$group)
+
+    ##    group n.words count
+    ## 1:     A       4     7
+    ## 2:     B       6     9
+
+Tally the Short- and Poly-Syllabic Words In a Vector of Strings by Grouping Variable(s)
+---------------------------------------------------------------------------------------
+
+    dat <- data.frame(
+       text = c("I like excellent chicken.", "I want eggs benedict now.", "Really?"),
+       group = c("A", "B", "A")
+    )
+    tally_both_vector_by(dat$text, dat$group)
+
+    ##    group n.words short poly
+    ## 1:     A       5     3    2
+    ## 2:     B       5     4    1
+
+    with(presidential_debates_2012, tally_both_vector_by(dialogue, person))
+
+    ##       person n.words short poly
+    ## 1:     OBAMA   18319 16286 2033
+    ## 2:    ROMNEY   19924 17858 2066
+    ## 3:   CROWLEY    1672  1525  147
+    ## 4:    LEHRER     765   674   91
+    ## 5:  QUESTION     583   486   97
+    ## 6: SCHIEFFER    1445  1289  156
+
+Readability Word Statistics By Grouping Variable(s)
+---------------------------------------------------
+
+    with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
+
+    ##        person   time n.sents n.words n.chars n.sylls n.shorts n.polys
+    ##  1:     OBAMA time 1     179    3599   16002    5221     3221     378
+    ##  2:     OBAMA time 2     494    7477   32459   10654     6696     781
+    ##  3:     OBAMA time 3     405    7243   32288   10675     6369     874
+    ##  4:    ROMNEY time 1     279    4085   17984    5875     3646     439
+    ##  5:    ROMNEY time 2     560    7536   32504   10720     6788     748
+    ##  6:    ROMNEY time 3     569    8303   35824   11883     7424     879
+    ##  7:   CROWLEY time 2     165    1672    6904    2308     1525     147
+    ##  8:    LEHRER time 1      87     765    3256    1087      674      91
+    ##  9:  QUESTION time 2      40     583    2765     930      486      97
+    ## 10: SCHIEFFER time 3     133    1445    6234    2058     1289     156

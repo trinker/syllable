@@ -99,15 +99,57 @@ You are welcome to:
 
 # Examples
 
+The following examples demonstrate the functionality of a select sample of **syllable** functions.
+
+## Count Syllables In a String
+
+Counts the number of syllables for each word in a string.
+
+```{r}
+count_string("I like chicken and eggs for breakfast")
+```
+
+## Count Syllables In a Vector of Strings
 
 
+```{r}
+sents <- c("I like chicken.", "I want eggs benidict for breakfast.")
+count_vector(sents)
+
+Map(function(x, y) setNames(x, y),
+   count_vector(sents),
+   strsplit(gsub("[^a-z ]", "", tolower(sents)), "\\s+")
+)
+```
+
+## Sum the Syllables In a Vector of Strings by Grouping Variable(s)
 
 
+```{r}
+dat <- data.frame(
+   text = c("I like chicken.", "I want eggs benedict for breakfast.", "Really?"),
+   group = c("A", "B", "A")
+)
+sum_vector_by(dat$text, dat$group)
+```
 
+## Tally the Short- and Poly-Syllabic Words In a Vector of Strings by Grouping Variable(s)
 
+```{r}
+dat <- data.frame(
+   text = c("I like excellent chicken.", "I want eggs benedict now.", "Really?"),
+   group = c("A", "B", "A")
+)
+tally_both_vector_by(dat$text, dat$group)
 
+with(presidential_debates_2012, tally_both_vector_by(dialogue, person))
+```
 
+## Readability Word Statistics By Grouping Variable(s)
 
+```{r}
+with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
+```
 
 
 
