@@ -26,6 +26,8 @@ pacman::p_load(syllable)
 **syllable** is a small collection of tools for counting syllables and polysyllables.  The tools rely 
 primarily on [**data.table**](https://cran.r-project.org/web/packages/data.table/index.html) hash table lookups, resulting in fast syllable counting.
 
+# Main Functions 
+
 The main functions follow the format of `action_object`.  
 
 ## Actions

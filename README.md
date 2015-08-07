@@ -18,22 +18,26 @@ polysyllables. The tools rely primarily on
 [**data.table**](https://cran.r-project.org/web/packages/data.table/index.html)
 hash table lookups, resulting in fast syllable counting.
 
-The main functions follow the format of `action_object`.
-
 
 Table of Contents
 ============
 
--   [Actions](#actions)
--   [Objects](#objects)
--   [Putting It Together](#putting-it-together)
+-   [Main Functions](#main-functions)
+    -   [Actions](#actions)
+    -   [Objects](#objects)
+    -   [Putting It Together](#putting-it-together)
 -   [Installation](#installation)
 -   [Contact](#contact)
 -   [Examples](#examples)
 
-Actions
+Main Functions
 ============
 
+
+The main functions follow the format of `action_object`.
+
+Actions
+-------
 
 The following table outlines the actions. Example Output correspond to
 this string: `"I like chicken sandwiches."`.
@@ -126,7 +130,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Thu Aug 06 22:04:48 2015 -->
+<!-- Thu Aug 06 22:07:29 2015 -->
 <table>
 <tr>
 <td>
