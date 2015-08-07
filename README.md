@@ -20,8 +20,20 @@ hash table lookups, resulting in fast syllable counting.
 
 The main functions follow the format of `action_object`.
 
+
+Table of Contents
+============
+
+-   [Actions](#actions)
+-   [Objects](#objects)
+-   [Putting It Together](#putting-it-together)
+-   [Installation](#installation)
+-   [Contact](#contact)
+-   [Examples](#examples)
+
 Actions
--------
+============
+
 
 The following table outlines the actions. Example Output correspond to
 this string: `"I like chicken sandwiches."`.
@@ -114,7 +126,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Thu Aug 06 21:59:35 2015 -->
+<!-- Thu Aug 06 22:04:48 2015 -->
 <table>
 <tr>
 <td>
@@ -198,20 +210,8 @@ tally_poly_vector_by
 </td>
 </tr>
 </table>
-
-Table of Contents
-============
-
--   [Actions](#actions)
--   [Objects](#objects)
--   [Putting It Together](#putting-it-together)
--   [Installation](#installation)
--   [Contact](#contact)
--   [Examples](#examples)
-
 Installation
 ============
-
 
 To download the development version of **syllable**:
 
