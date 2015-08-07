@@ -63,7 +63,7 @@ The function `count_vector` will provide a vector of integer counts for each wor
 count_vector(c("I like it.", "Look out!"))
 ```
 
-Each of the main functions is optimized to do its task efficiently.  While one could use `sum(count_vector(x))` and achieve the same results as `sum_vector(x)` it would be less efficeint.  
+Each of the main functions is optimized to do its task efficiently.  While one could use `sum(count_vector(x))` and achieve the same results as `sum_vector(x)` it would be less efficient.  
 
 The available syllable functions that follow the format of `action_object` are:
 

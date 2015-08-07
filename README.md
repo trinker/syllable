@@ -130,13 +130,13 @@ each word in a string. For this reason `count_vector` will return a
 
 Each of the main functions is optimized to do its task efficiently.
 While one could use `sum(count_vector(x))` and achieve the same results
-as `sum_vector(x)` it would be less efficeint.
+as `sum_vector(x)` it would be less efficient.
 
 The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Thu Aug 06 22:20:03 2015 -->
+<!-- Thu Aug 06 22:21:13 2015 -->
 <table>
 <tr>
 <td>
