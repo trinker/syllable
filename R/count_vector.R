@@ -6,6 +6,7 @@
 #' @param \ldots ignored
 #' @return Returns a list of vectors of integer counts.
 #' @export
+#' @family syllable functions
 #' @examples
 #' sents <- c("I like chicken.", "I want eggs benidict for breakfast.")
 #' count_vector(sents)

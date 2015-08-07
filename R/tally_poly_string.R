@@ -6,6 +6,7 @@
 #' @param \ldots ignored
 #' @return Returns a single integer of the total number of polysyllables in the
 #' string.
+#' @family syllable functions
 #' @export
 #' @examples
 #' tally_poly_string("I like generalized chicken and tarnishing hotdogs!")

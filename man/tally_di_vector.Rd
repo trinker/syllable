@@ -23,4 +23,24 @@ sents <- c("I like chicken.", "I want eggs benedict for breakfast.")
 tally_di_vector(sents)
 tally_di_vector(presidential_debates_2012$dialogue)
 }
+\seealso{
+Other syllable.functions: \code{\link{count_string}};
+  \code{\link{count_vector_by}};
+  \code{\link{count_vector}}; \code{\link{sum_string}};
+  \code{\link{sum_vector_by}}; \code{\link{sum_vector}};
+  \code{\link{tally_both_string}};
+  \code{\link{tally_both_vector_by}};
+  \code{\link{tally_both_vector}};
+  \code{\link{tally_di_string}};
+  \code{\link{tally_di_vector_by}};
+  \code{\link{tally_mono_string}};
+  \code{\link{tally_mono_vector_by}};
+  \code{\link{tally_mono_vector}};
+  \code{\link{tally_poly_string}};
+  \code{\link{tally_poly_vector_by}};
+  \code{\link{tally_poly_vector}};
+  \code{\link{tally_short_string}};
+  \code{\link{tally_short_vector_by}};
+  \code{\link{tally_short_vector}}
+}
 

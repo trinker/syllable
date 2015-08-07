@@ -5,6 +5,7 @@
 #' @param x A character string.
 #' @param \ldots ignored
 #' @return Returns a single integer of the total number of syllables in the string.
+#' @family syllable functions
 #' @export
 #' @examples
 #' sum_string("I like chicken and eggs for breakfast")

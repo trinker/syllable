@@ -8,6 +8,7 @@
 #' @return Returns a two column \code{\link[base]{data.frame}}
 #' (\code{\link[data.table]{data.table}}) of integer tallies for the total number of
 #' short syllable (short) and poly syllable (poly) words for each string in the vector.
+#' @family syllable functions
 #' @export
 #' @importFrom data.table :=
 #' @examples

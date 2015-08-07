@@ -7,6 +7,7 @@
 #' @param \ldots ignored
 #' @return Returns a two integer vector of the total number of non-polysyllables
 #' (short) and polysyllables (poly) in the string.
+#' @family syllable functions
 #' @export
 #' @examples
 #' tally_both_string("I like excellent chicken and mediocre hotdogs!")

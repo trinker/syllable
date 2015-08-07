@@ -11,6 +11,7 @@
 #' (\code{\link[data.table]{data.table}}) of integer tallies for the total number
 #' of short syllable (short) and poly syllable (poly) words for each string in
 #' the vector by grouping variable(s).
+#' @family syllable functions
 #' @export
 #' @examples
 #' dat <- data.frame(

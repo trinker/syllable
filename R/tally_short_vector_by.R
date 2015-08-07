@@ -10,6 +10,7 @@
 #' @return Returns a \code{\link[base]{data.frame}}
 #' (\code{\link[data.table]{data.table}}) of integer tallies for the total number
 #' of short syllable words for each string in the vector.
+#' @family syllable functions
 #' @export
 #' @examples
 #' dat <- data.frame(

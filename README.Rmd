@@ -55,12 +55,27 @@ The following table outlines the objects acted upon:
 
 ## Putting It Together
 
-The function `count_vector` will provide a vector of integer counts for each word in a string.  For this reason of integer vector counts. 
+The function `count_vector` will provide a vector of integer counts for each word in a string.  For this reason `count_vector` will return a `list` of integer vector counts. 
 
 ```{r}
 count_vector(c("I like it.", "Look out!"))
 ```
+
 Each of the main functions is optimized to do its task efficiently.  While one could use `sum(count_vector(x))` and achieve the same results as `sum_vector(x)` it would be less efficeint.  
+
+The available syllable functions that follow the format of `action_object` are:
+
+```{r, results='asis', echo=FALSE, comment=NA, warning=FALSE, htmlcap="Available Variable Functions"}
+p_load(pander, xtable, dplyr)
+
+avaible_syllable_funs() %>%
+    xtable() %>%
+    print(type = 'html', include.colnames = FALSE, include.rownames = FALSE,
+        html.table.attributes = '')
+
+#matrix(c(sprintf("`%s`", vect), blanks), ncol=4) %>%
+#    pandoc.table(format = "markdown", caption = "Available variable functions.")
+```
 
 # Installation
 
@@ -79,3 +94,18 @@ You are welcome to:
 * submit suggestions and bug-reports at: <https://github.com/trinker/syllable/issues>
 * send a pull request on: <https://github.com/trinker/syllable/>
 * compose a friendly e-mail to: <tyler.rinker@gmail.com>
+
+# Examples
+
+
+
+
+
+
+
+
+
+
+
+
+

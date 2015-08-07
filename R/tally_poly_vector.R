@@ -6,6 +6,7 @@
 #' @param \ldots ignored
 #' @return Returns a vector of integer tallies for the total number of
 #' polysyllable words for each string in the vector.
+#' @family syllable functions
 #' @export
 #' @examples
 #' sents <- c("I like excellent chicken.", "I desparately want eggs benedict.")

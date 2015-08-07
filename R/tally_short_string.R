@@ -6,6 +6,7 @@
 #' @param \ldots ignored
 #' @return Returns a single integer of the total number of non-polysyllables in
 #' the string.
+#' @family syllable functions
 #' @export
 #' @examples
 #' tally_short_string("I like excellent chicken and blah hotdogs!")

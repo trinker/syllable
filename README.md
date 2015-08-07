@@ -95,7 +95,8 @@ Putting It Together
 -------------------
 
 The function `count_vector` will provide a vector of integer counts for
-each word in a string. For this reason of integer vector counts.
+each word in a string. For this reason `count_vector` will return a
+`list` of integer vector counts.
 
     count_vector(c("I like it.", "Look out!"))
 
@@ -109,6 +110,94 @@ Each of the main functions is optimized to do its task efficiently.
 While one could use `sum(count_vector(x))` and achieve the same results
 as `sum_vector(x)` it would be less efficeint.
 
+The available syllable functions that follow the format of
+`action_object` are:
+
+<!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
+<!-- Thu Aug 06 21:59:35 2015 -->
+<table>
+<tr>
+<td>
+count_string
+</td>
+<td>
+tally_both_string
+</td>
+<td>
+tally_mono_string
+</td>
+<td>
+tally_short_string
+</td>
+</tr>
+<tr>
+<td>
+count_vector
+</td>
+<td>
+tally_both_vector
+</td>
+<td>
+tally_mono_vector
+</td>
+<td>
+tally_short_vector
+</td>
+</tr>
+<tr>
+<td>
+count_vector_by
+</td>
+<td>
+tally_both_vector_by
+</td>
+<td>
+tally_mono_vector_by
+</td>
+<td>
+tally_short_vector_by
+</td>
+</tr>
+<tr>
+<td>
+sum_string
+</td>
+<td>
+tally_di_string
+</td>
+<td>
+tally_poly_string
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+sum_vector
+</td>
+<td>
+tally_di_vector
+</td>
+<td>
+tally_poly_vector
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+sum_vector_by
+</td>
+<td>
+tally_di_vector_by
+</td>
+<td>
+tally_poly_vector_by
+</td>
+<td>
+</td>
+</tr>
+</table>
 
 Table of Contents
 ============
@@ -118,6 +207,7 @@ Table of Contents
 -   [Putting It Together](#putting-it-together)
 -   [Installation](#installation)
 -   [Contact](#contact)
+-   [Examples](#examples)
 
 Installation
 ============
@@ -141,3 +231,7 @@ You are welcome to:
 * submit suggestions and bug-reports at: <https://github.com/trinker/syllable/issues> 
 * send a pull request on: <https://github.com/trinker/syllable/> 
 * compose a friendly e-mail to: <tyler.rinker@gmail.com>
+
+
+Examples
+========

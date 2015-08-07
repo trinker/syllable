@@ -6,6 +6,7 @@
 #' @param \ldots ignored
 #' @return Returns a single integer of the total number of disyllables in the
 #' string.
+#' @family syllable functions
 #' @export
 #' @examples
 #' tally_di_string("I like chicken and hotdogs!")

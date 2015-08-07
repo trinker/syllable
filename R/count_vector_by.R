@@ -7,6 +7,7 @@
 #' of 1 or more grouping variables.
 #' @param \ldots ignored
 #' @return Returns a named list of vectors of integer counts for each grouping variable.
+#' @family syllable functions
 #' @export
 #' @examples
 #' dat <- data.frame(

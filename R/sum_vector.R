@@ -5,6 +5,7 @@
 #' @param x A character vector.
 #' @param \ldots ignored
 #' @return Returns a list of vectors of integer counts.
+#' @family syllable functions
 #' @export
 #' @importFrom data.table setDT
 #' @examples

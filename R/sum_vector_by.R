@@ -8,6 +8,7 @@
 #' @param \ldots ignored
 #' @return Returns a \code{\link[base]{data.frame}} (\code{\link[data.table]{data.table}}) of
 #' syllable sums (count) by grouping variable.
+#' @family syllable functions
 #' @export
 #' @importFrom data.table .SD
 #' @examples

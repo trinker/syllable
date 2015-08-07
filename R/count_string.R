@@ -6,6 +6,7 @@
 #' @param \ldots ignored
 #' @return Returns a vector of integer counts.
 #' @export
+#' @family syllable functions
 #' @examples
 #' count_string("I like chicken and eggs for breakfast")
 #' count_string(hamlets_soliloquy)
