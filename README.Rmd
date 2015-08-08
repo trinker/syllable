@@ -12,8 +12,19 @@ regex <- "(^Version:\\s+)(\\d+\\.\\d+\\.\\d+)"
 loc <- grep(regex, desc)
 ver <- gsub(regex, "\\2", desc[loc])
 verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg"><img src="https://img.shields.io/badge/Version-%s-orange.svg" alt="Version"/></a></p>', ver, ver)
-pacman::p_load(syllable)
-````
+pacman::p_load(syllable, knitr)
+```
+
+```{r, echo=FALSE}
+knit_hooks$set(htmlcap = function(before, options, envir) {
+  if(!before) {
+    paste('<p class="caption"><b><em>',options$htmlcap,"</em></b></p>",sep="")
+    }
+    })
+knitr::opts_knit$set(self.contained = TRUE, cache = FALSE)
+knitr::opts_chunk$set(fig.path = "inst/figure/")
+```
+
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/trinker/syllable.svg?branch=master)](https://travis-ci.org/trinker/syllable)
@@ -151,5 +162,30 @@ with(presidential_debates_2012, tally_both_vector_by(dialogue, person))
 with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
 ```
 
+## Visualize Poly Syllable Distributions
 
+```{r}
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(dplyr, ggplot2, scales)
+
+tally_both_vector(presidential_debates_2012$dialogue) %>%
+    mutate(Duration = 1:length(poly)) %>%
+    rowwise() %>%
+    filter((short + poly) > 4) %>%
+    mutate(
+        short = short/(short+poly),
+        poly = 1 - short,
+        size = poly > .3
+    ) %>%
+    ggplot(aes(Duration, poly)) +
+        geom_text(aes(label = Duration, size = size, color = size)) +
+        coord_flip() +
+        scale_size_manual(values = c(1.5, 2.5), guide=FALSE) +
+        scale_color_manual(values = c("grey75", "black"), guide=FALSE) +
+        scale_x_reverse() +
+        scale_y_continuous(label = scales::percent) +
+        ylab("Poly-syllabic") +
+        xlab("Duration (sentences)") +
+        theme_bw() 
+```
 

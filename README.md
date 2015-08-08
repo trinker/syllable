@@ -34,6 +34,7 @@ Table of Contents
     -   [Sum the Syllables In a Vector of Strings by Grouping Variable(s)](#sum-the-syllables-in-a-vector-of-strings-by-grouping-variable(s))
     -   [Tally the Short/Poly-Syllabic Words by Group(s)](#tally-the-shortpoly-syllabic-words-by-group(s))
     -   [Readability Word Statistics by Grouping Variable(s)](#readability-word-statistics-by-grouping-variable(s))
+    -   [Visualize Poly Syllable Distributions](#visualize-poly-syllable-distributions)
 
 Main Functions
 ============
@@ -135,7 +136,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Thu Aug 06 22:36:37 2015 -->
+<!-- Sat Aug 08 08:49:52 2015 -->
 <table>
 <tr>
 <td>
@@ -219,6 +220,9 @@ tally_poly_vector_by
 </td>
 </tr>
 </table>
+<p class="caption">
+<b><em>Available Variable Functions</em></b>
+</p>
 Installation
 ============
 
@@ -334,3 +338,31 @@ Readability Word Statistics by Grouping Variable(s)
     ##  8:    LEHRER time 1      87     765    3256    1087      674      91
     ##  9:  QUESTION time 2      40     583    2765     930      486      97
     ## 10: SCHIEFFER time 3     133    1445    6234    2058     1289     156
+
+Visualize Poly Syllable Distributions
+-------------------------------------
+
+    if (!require("pacman")) install.packages("pacman")
+    pacman::p_load(dplyr, ggplot2, scales)
+
+    tally_both_vector(presidential_debates_2012$dialogue) %>%
+        mutate(Duration = 1:length(poly)) %>%
+        rowwise() %>%
+        filter((short + poly) > 4) %>%
+        mutate(
+            short = short/(short+poly),
+            poly = 1 - short,
+            size = poly > .3
+        ) %>%
+        ggplot(aes(Duration, poly)) +
+            geom_text(aes(label = Duration, size = size, color = size)) +
+            coord_flip() +
+            scale_size_manual(values = c(1.5, 2.5), guide=FALSE) +
+            scale_color_manual(values = c("grey75", "black"), guide=FALSE) +
+            scale_x_reverse() +
+            scale_y_continuous(label = scales::percent) +
+            ylab("Poly-syllabic") +
+            xlab("Duration (sentences)") +
+            theme_bw() 
+
+![](inst/figure/unnamed-chunk-10-1.png)
