@@ -210,6 +210,6 @@ with(presidential_debates_2012, tally_both_vector_by(dialogue, list(person, time
         scale_y_continuous(label = scales::percent) +
         scale_fill_discrete(name="Syllable\nType") +
         xlab("Person & Time") +
-        ylab("Word Type") +
+        ylab("Usage") +
         theme_bw()
 ```

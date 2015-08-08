@@ -137,7 +137,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Sat Aug 08 10:55:58 2015 -->
+<!-- Sat Aug 08 10:56:48 2015 -->
 <table>
 <tr>
 <td>
@@ -389,7 +389,7 @@ Visualize Poly Syllable Distributions by Group
             scale_y_continuous(label = scales::percent) +
             scale_fill_discrete(name="Syllable\nType") +
             xlab("Person & Time") +
-            ylab("Word Type") +
+            ylab("Usage") +
             theme_bw()
 
 ![](inst/figure/unnamed-chunk-11-1.png)
