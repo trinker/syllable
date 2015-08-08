@@ -35,6 +35,7 @@ Table of Contents
     -   [Tally the Short/Poly-Syllabic Words by Group(s)](#tally-the-shortpoly-syllabic-words-by-group(s))
     -   [Readability Word Statistics by Grouping Variable(s)](#readability-word-statistics-by-grouping-variable(s))
     -   [Visualize Poly Syllable Distributions](#visualize-poly-syllable-distributions)
+    -   [Visualize Poly Syllable Distributions by Group](#visualize-poly-syllable-distributions-by-group)
 
 Main Functions
 ============
@@ -136,7 +137,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Sat Aug 08 08:49:52 2015 -->
+<!-- Sat Aug 08 10:54:41 2015 -->
 <table>
 <tr>
 <td>
@@ -366,3 +367,29 @@ Visualize Poly Syllable Distributions
             theme_bw() 
 
 ![](inst/figure/unnamed-chunk-10-1.png)
+
+Visualize Poly Syllable Distributions by Group
+----------------------------------------------
+
+    if (!require("pacman")) install.packages("pacman")
+    pacman::p_load(dplyr, ggplot2, tidyr, scales)
+
+    with(presidential_debates_2012, tally_both_vector_by(dialogue, list(person, time))) %>%
+        mutate(
+            person_time = paste(person, time, sep = "-"),
+            short = short/(short+poly),
+            poly = 1 - short
+        ) %>%
+        arrange(poly) %>%
+        mutate(person_time = factor(person_time, levels = person_time)) %>%
+        gather(type, prop, c(short, poly)) %>%
+        ggplot(aes(person_time, weight = prop, fill = type)) +
+            geom_bar() +
+            coord_flip() +        
+            scale_y_continuous(label = scales::percent) +
+            scale_fill_discrete(name="Syllable\nType") +
+            ylab("Person & Time") +
+            xlab("Word Type") +
+            theme_bw()
+
+![](inst/figure/unnamed-chunk-11-1.png)

@@ -189,3 +189,27 @@ tally_both_vector(presidential_debates_2012$dialogue) %>%
         theme_bw() 
 ```
 
+## Visualize Poly Syllable Distributions by Group 
+
+```{r}
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(dplyr, ggplot2, tidyr, scales)
+
+with(presidential_debates_2012, tally_both_vector_by(dialogue, list(person, time))) %>%
+    mutate(
+        person_time = paste(person, time, sep = "-"),
+        short = short/(short+poly),
+        poly = 1 - short
+    ) %>%
+    arrange(poly) %>%
+    mutate(person_time = factor(person_time, levels = person_time)) %>%
+    gather(type, prop, c(short, poly)) %>%
+    ggplot(aes(person_time, weight = prop, fill = type)) +
+        geom_bar() +
+        coord_flip() +        
+        scale_y_continuous(label = scales::percent) +
+        scale_fill_discrete(name="Syllable\nType") +
+        ylab("Person & Time") +
+        xlab("Word Type") +
+        theme_bw()
+```
