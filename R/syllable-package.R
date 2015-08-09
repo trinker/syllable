@@ -60,3 +60,17 @@ NULL
 #' @usage data(presidential_debates_2012)
 #' @format A data frame with 2912 rows and 4 variables
 NULL
+
+
+#' Common Proper Nouns
+#'
+#' A dataset containing a character vector of common proper nouns Greater than 2
+#' syllables.  This is useful to exclude words for "complex word" detection
+#' used in the Gunning fog index.
+#'
+#' @docType data
+#' @keywords datasets
+#' @name common_polysyllabic_proper_nouns
+#' @usage data(common_polysyllabic_proper_nouns)
+#' @format A character vector with 250 elements
+NULL

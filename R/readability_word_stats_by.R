@@ -21,7 +21,7 @@
 #' with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
 readability_word_stats_by <- function(x, group, ...){
 
-    text.var <- count <- element_id <- NULL
+    n.complex <- text.var <- count <- element_id <- NULL
 
     if (is.list(group) & length(group)>1) {
         m <- unlist(as.character(substitute(group))[-1])
@@ -37,7 +37,7 @@ readability_word_stats_by <- function(x, group, ...){
     }
 
     element_id <- add_row_id(count_row_length(x))
-    text_dat <- long_dat <- stats::setNames(as.data.frame(grouping,
+    long_dat_complex <- text_dat <- long_dat <- stats::setNames(as.data.frame(grouping,
         stringsAsFactors = FALSE), G)
     long_dat <- long_dat[element_id, , drop = FALSE]
     long_dat[["count"]] <- syllable_count_long_vector(x)
@@ -54,7 +54,23 @@ readability_word_stats_by <- function(x, group, ...){
     out2 <- text_dat[, list(n.chars = sum(char_count(text.var), na.rm = TRUE),
         n.sents = sum(stringi::stri_count_boundaries(text.var, type="sentence"),
             na.rm = TRUE)),  keyby = G]
-    out <- merge(out1, out2)
-    data.table::setcolorder(out, c(G, "n.sents", "n.words", "n.chars", "n.sylls", "n.shorts", "n.polys"))
+
+    gunning <- gsub("(?<=[a-z]{3})(ing|es|ed)", "",
+        stringi::stri_trans_tolower(as.character(x)), perl=TRUE)
+    proper_noun_regex <- paste(paste0("\\b",
+        .common_polysyllabic_proper_nouns, "\\b"), collapse = "|")
+    long_dat_complex[["n.complex"]] <- tally_poly_vector(gsub(proper_noun_regex,
+        "", x, perl=TRUE))
+
+    data.table::setDT(long_dat_complex)
+
+    out3 <- long_dat_complex[, list(n.complexes = sum(n.complex, na.rm = TRUE)),
+        keyby = G]
+
+    out <- Reduce(merge,list(out1, out2, out3))
+
+    data.table::setcolorder(out, c(G, "n.sents", "n.words", "n.chars", "n.sylls",
+        "n.shorts", "n.polys", "n.complexes"))
+
     out
 }
