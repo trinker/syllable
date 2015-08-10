@@ -5,10 +5,13 @@
 #' @param x A character vector.
 #' @param group The grouping variable(s).  Takes a single grouping variable or a
 #' list of 1 or more grouping variables.
+#' @param group.names A vector of names that corresponds to group.  Generally
+#' for internal use.
 #' @param \ldots ignored
 #' @return Returns a \code{\link[base]{data.frame}}
 #' (\code{\link[data.table]{data.table}}) readability word statistics.
 #' @export
+#' @importFrom data.table :=
 #' @examples
 #' dat <- data.frame(
 #'    text = c("I like excellent chicken.", "I want eggs benedict now.", "Really?"),
@@ -19,7 +22,7 @@
 #' with(presidential_debates_2012, readability_word_stats_by(dialogue, person))
 #' with(presidential_debates_2012, readability_word_stats_by(dialogue, list(role, time)))
 #' with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
-readability_word_stats_by <- function(x, group, ...){
+readability_word_stats_by <- function(x, group, group.names, ...){
 
     n.complex <- text.var <- count <- element_id <- NULL
 
@@ -34,6 +37,10 @@ readability_word_stats_by <- function(x, group, ...){
         G <- as.character(substitute(group))
         G <- G[length(G)]
         grouping <- unlist(group)
+    }
+
+    if(!missing(group.names)) {
+        G <- group.names
     }
 
     element_id <- add_row_id(count_row_length(x))
@@ -55,10 +62,9 @@ readability_word_stats_by <- function(x, group, ...){
         n.sents = sum(stringi::stri_count_boundaries(text.var, type="sentence"),
             na.rm = TRUE)),  keyby = G]
 
-    gunning <- gsub("(?<=[a-z]{3})(ing|es|ed)", "",
+    gunning <- gsub("(?<=[a-z]{3})(ing|es|ed)$", "",
         stringi::stri_trans_tolower(as.character(x)), perl=TRUE)
-    proper_noun_regex <- paste(paste0("\\b",
-        .common_polysyllabic_proper_nouns, "\\b"), collapse = "|")
+
     long_dat_complex[["n.complex"]] <- tally_poly_vector(gsub(proper_noun_regex,
         "", x, perl=TRUE))
 
@@ -67,10 +73,14 @@ readability_word_stats_by <- function(x, group, ...){
     out3 <- long_dat_complex[, list(n.complexes = sum(n.complex, na.rm = TRUE)),
         keyby = G]
 
-    out <- Reduce(merge,list(out1, out2, out3))
+    out <- merge(merge(out1, out2), out3)
 
     data.table::setcolorder(out, c(G, "n.sents", "n.words", "n.chars", "n.sylls",
         "n.shorts", "n.polys", "n.complexes"))
 
+    attributes(out)[["groups"]] <- G
     out
 }
+
+proper_noun_regex <- paste(paste0("\\b",
+    .common_polysyllabic_proper_nouns, "\\b"), collapse = "|")

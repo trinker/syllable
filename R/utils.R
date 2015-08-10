@@ -83,6 +83,26 @@ syllable_count_long_vector <- function(x){
 
 }
 
+
+syllable_count_long_vector_ <- function(words){
+
+    # find NAs
+    NAs <- which(is.na(words))
+
+    # lookup syllable counts
+    counts <- lookup_syllable_counts(words)
+
+    # find words that could not be found
+    not_found <- which(is.na(counts))
+    not_found <- not_found[!not_found %in% NAs]
+
+    # compute syllable count on not found words
+    counts[not_found] <- compute_syllable_counts(words[not_found])
+
+    counts
+
+}
+
 char_count <- function(x) stringi::stri_count_boundaries(gsub("[^[:alnum:]]", "", x), type="character")
 
 

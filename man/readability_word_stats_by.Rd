@@ -4,13 +4,16 @@
 \alias{readability_word_stats_by}
 \title{Readability Word Statistics By Grouping Variable(s)}
 \usage{
-readability_word_stats_by(x, group, ...)
+readability_word_stats_by(x, group, group.names, ...)
 }
 \arguments{
 \item{x}{A character vector.}
 
 \item{group}{The grouping variable(s).  Takes a single grouping variable or a
 list of 1 or more grouping variables.}
+
+\item{group.names}{A vector of names that corresponds to group.  Generally
+for internal use.}
 
 \item{\ldots}{ignored}
 }
