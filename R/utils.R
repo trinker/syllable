@@ -106,3 +106,8 @@ syllable_count_long_vector_ <- function(words){
 char_count <- function(x) stringi::stri_count_boundaries(gsub("[^[:alnum:]]", "", x), type="character")
 
 
+sent_count <- function(x, ...) {
+    sent_token_annotator <- openNLP::Maxent_Sent_Token_Annotator(...)
+    if (length(x) == 1 && is.na(x)) return(NA)
+    length(NLP::annotate(NLP::as.String(paste(x, collapse = " ")), sent_token_annotator))
+}

@@ -35,8 +35,7 @@ readability_word_stats <- function(x, ...){
     data.table::setkey(text_dat, "element_id")
 
     out2 <- text_dat[, list(n.chars = sum(char_count(text.var), na.rm = TRUE),
-        n.sents = sum(stringi::stri_count_boundaries(text.var, type="sentence"),
-            na.rm = TRUE)),  keyby = "element_id"]
+        n.sents = sum(sent_count(text.var, ...), na.rm = TRUE)),  keyby = "element_id"]
 
     gunning <- gsub("(?<=[a-z]{3})(ing|es|ed)$", "",
         stringi::stri_trans_tolower(x), perl=TRUE)
