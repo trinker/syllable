@@ -30,9 +30,9 @@ IMPROVEMENTS
 
 * `readability_word_stats` and `readability_word_stats_by` used **stringi**'s
   sentence detection.  This was not accurate as seen:
-  http://stackoverflow.com/q/31865511/1000343.  The package now utilizes the
-  following regex with **stringi**:
-  `"(?&lt;!\\w\\.\\w.)(?&lt;![A-Z][a-z]\\.)(?&lt;=\\.|\\?|\\!)\\s"`
+  http://stackoverflow.com/q/31865511/1000343.  The package now utilizes
+  **NLP**/**openNLP** to detect number of sentences.  This comes at the cost of
+  speed.
 
 **CHANGES**
 
