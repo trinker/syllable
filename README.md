@@ -137,7 +137,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Mon Aug 10 19:04:10 2015 -->
+<!-- Mon Aug 10 21:43:31 2015 -->
 <table>
 <tr>
 <td>
@@ -329,16 +329,16 @@ Readability Word Statistics by Grouping Variable(s)
     with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
 
     ##        person   time n.sents n.words n.chars n.sylls n.shorts n.polys
-    ##  1:     OBAMA time 1     174    3599   16002    5221     3221     378
-    ##  2:     OBAMA time 2     471    7477   32459   10654     6696     781
-    ##  3:     OBAMA time 3     379    7243   32288   10675     6369     874
-    ##  4:    ROMNEY time 1     275    4085   17984    5875     3646     439
-    ##  5:    ROMNEY time 2     531    7536   32504   10720     6788     748
-    ##  6:    ROMNEY time 3     531    8303   35824   11883     7424     879
-    ##  7:   CROWLEY time 2     141    1672    6904    2308     1525     147
-    ##  8:    LEHRER time 1      77     765    3256    1087      674      91
-    ##  9:  QUESTION time 2      37     583    2765     930      486      97
-    ## 10: SCHIEFFER time 3     121    1445    6234    2058     1289     156
+    ##  1:     OBAMA time 1     179    3599   16002    5221     3221     378
+    ##  2:     OBAMA time 2     494    7477   32459   10654     6696     781
+    ##  3:     OBAMA time 3     405    7243   32288   10675     6369     874
+    ##  4:    ROMNEY time 1     279    4085   17984    5875     3646     439
+    ##  5:    ROMNEY time 2     560    7536   32504   10720     6788     748
+    ##  6:    ROMNEY time 3     569    8303   35824   11883     7424     879
+    ##  7:   CROWLEY time 2     165    1672    6904    2308     1525     147
+    ##  8:    LEHRER time 1      87     765    3256    1087      674      91
+    ##  9:  QUESTION time 2      40     583    2765     930      486      97
+    ## 10: SCHIEFFER time 3     133    1445    6234    2058     1289     156
     ##     n.complexes
     ##  1:         378
     ##  2:         781
