@@ -1,4 +1,4 @@
-syllable
+syllable   [![Follow](https://img.shields.io/twitter/follow/tylerrinker.svg?style=social)](https://twitter.com/intent/follow?screen_name=tylerrinker)
 ============
 
 
@@ -9,7 +9,7 @@ developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repos
 Status](https://travis-ci.org/trinker/syllable.svg?branch=master)](https://travis-ci.org/trinker/syllable)
 [![Coverage
 Status](https://coveralls.io/repos/trinker/syllable/badge.svg?branch=master)](https://coveralls.io/r/trinker/syllable?branch=master)
-[![DOI](https://zenodo.org/badge/5398/trinker/syllable.svg)](https://zenodo.org/badge/latestdoi/5398/trinker/syllable)<a href="https://img.shields.io/badge/Version-0.1.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.0-orange.svg" alt="Version"/></a>
+[![DOI](https://zenodo.org/badge/5398/trinker/syllable.svg)](https://zenodo.org/badge/latestdoi/5398/trinker/syllable)<a href="https://img.shields.io/badge/Version-0.1.1-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.1-orange.svg" alt="Version"/></a>
 </p>
 <img src="inst/syllable_logo/r_syllable.png" width="200" alt="qdapRegex Logo">
 
@@ -31,9 +31,9 @@ Table of Contents
 -   [Examples](#examples)
     -   [Count Syllables In a String](#count-syllables-in-a-string)
     -   [Count Syllables In a Vector of Strings](#count-syllables-in-a-vector-of-strings)
-    -   [Sum the Syllables In a Vector of Strings by Grouping Variable(s)](#sum-the-syllables-in-a-vector-of-strings-by-grouping-variable(s))
-    -   [Tally the Short/Poly-Syllabic Words by Group(s)](#tally-the-shortpoly-syllabic-words-by-group(s))
-    -   [Readability Word Statistics by Grouping Variable(s)](#readability-word-statistics-by-grouping-variable(s))
+    -   [Sum the Syllables In a Vector of Strings by Grouping Variable(s)](#sum-the-syllables-in-a-vector-of-strings-by-grouping-variables)
+    -   [Tally the Short/Poly-Syllabic Words by Group(s)](#tally-the-shortpoly-syllabic-words-by-groups)
+    -   [Readability Word Statistics by Grouping Variable(s)](#readability-word-statistics-by-grouping-variables)
     -   [Visualize Poly Syllable Distributions](#visualize-poly-syllable-distributions)
     -   [Visualize Poly Syllable Distributions by Group](#visualize-poly-syllable-distributions-by-group)
 
@@ -49,7 +49,13 @@ Actions
 The following table outlines the actions. Example Output correspond to
 this string: `"I like chicken sandwiches."`.
 
-<table>
+<table style="width:136%;">
+<colgroup>
+<col width="20%" />
+<col width="40%" />
+<col width="33%" />
+<col width="41%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Action</th>
@@ -136,8 +142,8 @@ as `sum_vector(x)` it would be less efficient.
 The available syllable functions that follow the format of
 `action_object` are:
 
-<!-- html table generated in R 3.3.0 by xtable 1.7-4 package -->
-<!-- Mon Aug 10 21:43:31 2015 -->
+<!-- html table generated in R 3.2.4 by xtable 1.8-2 package -->
+<!-- Sun Apr 03 10:34:22 2016 -->
 <table>
 <tr>
 <td>
@@ -241,10 +247,10 @@ the development version:
 Contact
 =======
 
-You are welcome to: 
-* submit suggestions and bug-reports at: <https://github.com/trinker/syllable/issues> 
-* send a pull request on: <https://github.com/trinker/syllable/> 
-* compose a friendly e-mail to: <tyler.rinker@gmail.com>
+You are welcome to:    
+- submit suggestions and bug-reports at: <https://github.com/trinker/syllable/issues>    
+- send a pull request on: <https://github.com/trinker/syllable/>    
+- compose a friendly e-mail to: <tyler.rinker@gmail.com>    
 
 
 Examples
@@ -329,16 +335,16 @@ Readability Word Statistics by Grouping Variable(s)
     with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
 
     ##        person   time n.sents n.words n.chars n.sylls n.shorts n.polys
-    ##  1:     OBAMA time 1     179    3599   16002    5221     3221     378
-    ##  2:     OBAMA time 2     494    7477   32459   10654     6696     781
-    ##  3:     OBAMA time 3     405    7243   32288   10675     6369     874
-    ##  4:    ROMNEY time 1     279    4085   17984    5875     3646     439
-    ##  5:    ROMNEY time 2     560    7536   32504   10720     6788     748
-    ##  6:    ROMNEY time 3     569    8303   35824   11883     7424     879
-    ##  7:   CROWLEY time 2     165    1672    6904    2308     1525     147
-    ##  8:    LEHRER time 1      87     765    3256    1087      674      91
-    ##  9:  QUESTION time 2      40     583    2765     930      486      97
-    ## 10: SCHIEFFER time 3     133    1445    6234    2058     1289     156
+    ##  1:     OBAMA time 1     174    3599   16002    5221     3221     378
+    ##  2:     OBAMA time 2     471    7477   32459   10654     6696     781
+    ##  3:     OBAMA time 3     379    7243   32288   10675     6369     874
+    ##  4:    ROMNEY time 1     275    4085   17984    5875     3646     439
+    ##  5:    ROMNEY time 2     531    7536   32504   10720     6788     748
+    ##  6:    ROMNEY time 3     531    8303   35824   11883     7424     879
+    ##  7:   CROWLEY time 2     141    1672    6904    2308     1525     147
+    ##  8:    LEHRER time 1      77     765    3256    1087      674      91
+    ##  9:  QUESTION time 2      37     583    2765     930      486      97
+    ## 10: SCHIEFFER time 3     121    1445    6234    2058     1289     156
     ##     n.complexes
     ##  1:         378
     ##  2:         781

@@ -44,7 +44,7 @@ variables_as_matrix <- function (variable_functions, ncols = 5, ...) {
 }
 
 
-' Prints an available Object.
+#' Prints an available Object.
 #'
 #' Prints an available object.
 #'

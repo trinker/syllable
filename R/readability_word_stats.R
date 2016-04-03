@@ -44,7 +44,8 @@ readability_word_stats <- function(x, ...){
 
     dat_complex <- data.frame(
         element_id = seq_along(x),
-        count = tally_poly_vector(gsub(proper_noun_regex, "", x, perl=TRUE)),
+        count = tally_poly_vector(sub("(^.+[^aeiou])e[sd]$", "\\1",
+            gsub(proper_noun_regex, "", x, perl=TRUE))),
         stringsAsFactors = FALSE
     )
 
@@ -56,7 +57,7 @@ readability_word_stats <- function(x, ...){
 
     data.table::setcolorder(out, c("n.sents", "n.words", "n.chars", "n.sylls",
         "n.shorts", "n.polys", "n.complexes"))
-    out
+    out[]
 }
 
 .common_polysyllabic_proper_nouns <- c("aberdeen", "abilene", "abraham", "afghanistan", "african",

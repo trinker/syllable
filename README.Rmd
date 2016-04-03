@@ -90,6 +90,7 @@ avaible_syllable_funs() %>%
 #    pandoc.table(format = "markdown", caption = "Available variable functions.")
 ```
 
+
 # Installation
 
 To download the development version of **syllable**:
@@ -116,9 +117,11 @@ The following examples demonstrate the functionality of a select sample of **syl
 
 Counts the number of syllables for each word in a string.
 
+
 ```{r}
 count_string("I like chicken and eggs for breakfast")
 ```
+
 
 ## Count Syllables In a Vector of Strings
 
@@ -133,6 +136,7 @@ Map(function(x, y) setNames(x, y),
 )
 ```
 
+
 ## Sum the Syllables In a Vector of Strings by Grouping Variable(s)
 
 
@@ -143,6 +147,7 @@ dat <- data.frame(
 )
 sum_vector_by(dat$text, dat$group)
 ```
+
 
 ## Tally the Short/Poly-Syllabic Words by Group(s)
 
@@ -156,13 +161,16 @@ tally_both_vector_by(dat$text, dat$group)
 with(presidential_debates_2012, tally_both_vector_by(dialogue, person))
 ```
 
+
 ## Readability Word Statistics by Grouping Variable(s)
 
 ```{r}
 with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
 ```
 
+
 ## Visualize Poly Syllable Distributions
+
 
 ```{r}
 if (!require("pacman")) install.packages("pacman")
@@ -189,7 +197,9 @@ tally_both_vector(presidential_debates_2012$dialogue) %>%
         theme_bw() 
 ```
 
+
 ## Visualize Poly Syllable Distributions by Group 
+
 
 ```{r}
 if (!require("pacman")) install.packages("pacman")
@@ -213,3 +223,5 @@ with(presidential_debates_2012, tally_both_vector_by(dialogue, list(person, time
         ylab("Usage") +
         theme_bw()
 ```
+
+

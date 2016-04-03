@@ -64,8 +64,8 @@ readability_word_stats_by <- function(x, group, group.names, ...){
     gunning <- gsub("(?<=[a-z]{3})(ing|es|ed)$", "",
         stringi::stri_trans_tolower(as.character(x)), perl=TRUE)
 
-    long_dat_complex[["n.complex"]] <- tally_poly_vector(gsub(proper_noun_regex,
-        "", x, perl=TRUE))
+    long_dat_complex[["n.complex"]] <- tally_poly_vector(sub("(^.+[^aeiou])e[sd]$", "\\1", gsub(proper_noun_regex,
+        "", x, perl=TRUE)))
 
     data.table::setDT(long_dat_complex)
 
@@ -78,7 +78,7 @@ readability_word_stats_by <- function(x, group, group.names, ...){
         "n.shorts", "n.polys", "n.complexes"))
 
     attributes(out)[["groups"]] <- G
-    out
+    out[]
 }
 
 proper_noun_regex <- paste(paste0("\\b",
