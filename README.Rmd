@@ -100,7 +100,12 @@ Download the [zip ball](https://github.com/trinker/syllable/zipball/master) or [
 
 ```r
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load_gh("trinker/syllable")
+pacman::p_load_gh(
+    'trinker/lexicon',
+    'trinker/textclean',
+    'trinker/textshape',
+    'trinker/syllable'
+)
 ```
 
 # Contact

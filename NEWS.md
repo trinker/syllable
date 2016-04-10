@@ -39,6 +39,9 @@ syllable 0.1.0 -
 
 **CHANGES**
 
+* **NLP** and **openNLP** dependencies replaced with **textshape** and
+  **textclean** to improve sentence detection speed.
+
 syllable 0.0.1
 ----------------------------------------------------------------
 
