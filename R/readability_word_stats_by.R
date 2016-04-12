@@ -58,6 +58,7 @@ readability_word_stats_by <- function(x, group, group.names, ...){
 
     text_dat[["text.var"]] <- as.character(x)
     data.table::setDT(text_dat)
+
     out2 <- text_dat[, list(n.chars = sum(char_count(text.var), na.rm = TRUE),
         n.sents = sum(sent_count(text.var, ...), na.rm = TRUE)),  keyby = G]
 

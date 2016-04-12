@@ -113,7 +113,7 @@ char_count <- function(x) stringi::stri_count_boundaries(gsub("[^[:alnum:]]", ""
 # }
 
 sent_count <- function(x, ...){
-    length(na.omit(unlist(textshape::split_sentence(textclean::replace_non_ascii(x))[[1]])))
+    length(na.omit(unlist(textshape::split_sentence(textclean::replace_non_ascii(x)))))
 }
 
 
