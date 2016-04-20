@@ -9,7 +9,7 @@ Description: Tools for counting syllables and polysyllables.  The tools
         in fast syllable counting.
 Depends: R (>= 3.2.1)
 Suggests: testthat
-Imports: data.table, stringi, stats, textshape, utils
+Imports: data.table, stringi, stats, textcleanLite, textshape, utils
 Date: 2016-04-11
 License: GPL-2
 LazyData: TRUE
