@@ -10,7 +10,7 @@ Description: Tools for counting syllables and polysyllables.  The tools
 Depends: R (>= 3.2.1)
 Suggests: testthat
 Imports: data.table, stringi, stats, textclean, textshape, utils
-Date: 2016-04-11
+Date: 2016-11-26
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)

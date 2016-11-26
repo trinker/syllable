@@ -5,9 +5,9 @@ p_load(dplyr, XML, qdapDictionaries, parallel)
 
 syllable_scrape <- function(x){
     URL <- sprintf('http://www.poetrysoup.com/syllables/%s', x)
-    Table <- XML::readHTMLTable(URL, FALSE, which=2, stringsAsFactors = FALSE)[1:2, 2] 
+    Table <- XML::readHTMLTable(URL, FALSE, which=2, stringsAsFactors = FALSE)[1:2, 2]
     NAdet <- function(x) grepl("^N/A$", x)
-    data.frame(word = x, syllables = as.numeric(Table[1]), 
+    data.frame(word = x, syllables = as.numeric(Table[1]),
         in_dict = NAdet(Table[2]), stringsAsFactors = FALSE)
 }
 
@@ -36,7 +36,7 @@ sylls <- parallel::parLapply(cl, iter_list[[n]], function(i) {
 })
 
 saveRDS(sylls, file = sprintf("sylls/sylls_%s.rds", n))
-stopCluster(cl)  
+stopCluster(cl)
 
 
 redos <- sapply(sylls, inherits, "try-error")
@@ -83,18 +83,23 @@ sylls_original <- syllable_counts_data %>%
     filter(!in_dict) %>%
     select(word) %>%
     inner_join(syllable_df) %>%
-    `[`(1:47,) 
+    `[`(1:47,)
 
 
 syllable_counts_data <- syllable_counts_data[!syllable_counts_data[["word"]] %in% sylls_original[["word"]], ]
 
-sylls_original[["in_dict"]] <- TRUE 
+sylls_original[["in_dict"]] <- TRUE
 
 syllable_counts_data <- dplyr::rbind_all(list(syllable_counts_data, sylls_original)) %>%
     arrange(word) %>%
     select(-in_dict) %>%
-    as.data.frame(, stringsAsFactors = FALSE) 
+    as.data.frame(, stringsAsFactors = FALSE)
 
 
 data.table::setDT(syllable_counts_data)
-data.table::setkey(syllable_counts_data, word) 
+data.table::setkey(syllable_counts_data, word)
+
+
+
+
+
