@@ -12,7 +12,9 @@
 #'     "I thought that was good.  Well a bit weird.", "I know right!")
 #' readability_word_stats(x)
 #'
+#' \dontrun{
 #' readability_word_stats(presidential_debates_2012$dialogue)
+#' }
 readability_word_stats <- function(x, ...){
 
     n.complex <- text.var <- count <- element_id <- NULL

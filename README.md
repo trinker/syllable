@@ -16,8 +16,8 @@ Status](https://coveralls.io/repos/trinker/syllable/badge.svg?branch=master)](ht
 
 **syllable** is a small collection of tools for counting syllables and
 polysyllables. The tools rely primarily on
-[**data.table**](https://cran.r-project.org/web/packages/data.table/index.html)
-hash table lookups, resulting in fast syllable counting.
+[**data.table**](https://CRAN.R-project.org/package=data.table) hash
+table lookups, resulting in fast syllable counting.
 
 
 Table of Contents
@@ -143,8 +143,8 @@ as `sum_vector(x)` it would be less efficient.
 The available syllable functions that follow the format of
 `action_object` are:
 
-<!-- html table generated in R 3.2.4 by xtable 1.8-2 package -->
-<!-- Mon Apr 11 21:21:46 2016 -->
+<!-- html table generated in R 3.4.0 by xtable 1.8-2 package -->
+<!-- Mon Jan 02 21:20:57 2017 -->
 <table>
 <tr>
 <td>

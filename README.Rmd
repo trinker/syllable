@@ -36,7 +36,7 @@ knitr::opts_chunk$set(fig.path = "inst/figure/")
 
 
 **syllable** is a small collection of tools for counting syllables and polysyllables.  The tools rely 
-primarily on [**data.table**](https://cran.r-project.org/web/packages/data.table/index.html) hash table lookups, resulting in fast syllable counting.
+primarily on [**data.table**](https://CRAN.R-project.org/package=data.table) hash table lookups, resulting in fast syllable counting.
 
 # Main Functions 
 

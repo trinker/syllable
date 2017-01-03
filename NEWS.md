@@ -34,13 +34,20 @@ syllable 0.1.0 -
   **NLP**/**openNLP** to detect number of sentences.  This comes at the cost of
   speed.
 
-* `readability_word_stats` no removes -es & -ed suffixes for calculating
+* `readability_word_stats` now removes -es & -ed suffixes for calculating
   `n.complexes`.
 
 **CHANGES**
 
 * **NLP** and **openNLP** dependencies replaced with **textshape** and
   **textclean** to improve sentence detection speed.
+
+* **textcleanLite** dependency replaced with **textclean** because the
+  **hunspell** dependency in **textclean** is no longer explicitly imported.
+  This allows the package to be used within trickier environments such as
+  Microsoft Azure.
+
+
 
 syllable 0.0.1
 ----------------------------------------------------------------
