@@ -9,7 +9,7 @@ sum_string(x, ...)
 \arguments{
 \item{x}{A character string.}
 
-\item{\ldots}{ignored}
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a single integer of the total number of syllables in the string.

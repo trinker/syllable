@@ -9,7 +9,7 @@ tally_both_string(x, ...)
 \arguments{
 \item{x}{A character vector.}
 
-\item{\ldots}{ignored}
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a two integer vector of the total number of non-polysyllables

@@ -3,7 +3,7 @@
 #' Non-polysyllabic word tallies for the words in a string.
 #'
 #' @param x A character vector.
-#' @param \ldots ignored
+#' @param \ldots ignored.
 #' @return Returns a single integer of the total number of non-polysyllables in
 #' the string.
 #' @family syllable functions

@@ -3,12 +3,12 @@
 #' Syllable counts for the words in a vector of strings.
 #'
 #' @param x A character vector.
-#' @param \ldots ignored
+#' @param \ldots ignored.
 #' @return Returns a list of vectors of integer counts.
 #' @export
 #' @family syllable functions
 #' @examples
-#' sents <- c("I like chicken.", "I want eggs benidict for breakfast.")
+#' sents <- c("I like chicken.", "I want eggs Benedict for breakfast.")
 #' count_vector(sents)
 #'
 #' Map(function(x, y) setNames(x, y),

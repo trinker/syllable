@@ -3,13 +3,13 @@
 #' Mono-syllabic word tallies for the words in a vector of strings.
 #'
 #' @param x A character vector.
-#' @param \ldots ignored
+#' @param \ldots ignored.
 #' @return Returns a vector of integer tallies for the total number of
 #' monosyllable words for each string in the vector.
 #' @family syllable functions
 #' @export
 #' @examples
-#' sents <- c("I like chicken.", "I want eggs benedict for breakfast.")
+#' sents <- c("I like chicken.", "I want eggs Benedict for breakfast.")
 #' tally_mono_vector(sents)
 #' tally_mono_vector(presidential_debates_2012$dialogue)
 tally_mono_vector <- function(x, ...){

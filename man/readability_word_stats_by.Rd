@@ -4,7 +4,8 @@
 \alias{readability_word_stats_by}
 \title{Readability Word Statistics By Grouping Variable(s)}
 \usage{
-readability_word_stats_by(x, group, group.names, ...)
+readability_word_stats_by(x, group, group.names, as.tibble = tibble_output(),
+  ...)
 }
 \arguments{
 \item{x}{A character vector.}
@@ -15,7 +16,14 @@ list of 1 or more grouping variables.}
 \item{group.names}{A vector of names that corresponds to group.  Generally
 for internal use.}
 
-\item{\ldots}{ignored}
+\item{as.tibble}{logical.  If \code{TRUE} the output class will be set to a
+\pkg{tibble}, otherwise a \code{\link[data.table]{data.table}}.  Default
+checks \code{getOption("tibble.out")} as a logical.  If this is \code{NULL}
+the default \code{\link[textshape]{tibble_output}} will set \code{as.tibble}
+to \code{TRUE} if \pkg{dplyr} is loaded.  Otherwise, the output will be a
+\code{\link[data.table]{data.table}}.}
+
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a \code{\link[base]{data.frame}}
@@ -26,7 +34,7 @@ Word statistics commonly used to calculate readability sores by grouping variabl
 }
 \examples{
 dat <- data.frame(
-   text = c("I like excellent chicken.", "I want eggs benedict now.", "Really?"),
+   text = c("I like excellent chicken.", "I want eggs Benedict now.", "Really?"),
    group = c("A", "B", "A")
 )
 readability_word_stats_by(dat$text, dat$group)

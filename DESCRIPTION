@@ -10,8 +10,10 @@ Description: Tools for counting syllables and polysyllables.  The tools
 Depends: R (>= 3.2.1)
 Suggests: testthat
 Imports: data.table, stringi, stats, textclean, textshape, utils
-Date: 2017-01-02
+Date: 2017-01-14
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)
 RoxygenNote: 5.0.1
+URL: http://github.com/trinker/syllable
+BugReports: http://github.com/trinker/syllable/issues

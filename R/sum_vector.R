@@ -3,13 +3,13 @@
 #' Syllable sums for the words in a vector of strings.
 #'
 #' @param x A character vector.
-#' @param \ldots ignored
+#' @param \ldots ignored.
 #' @return Returns a list of vectors of integer counts.
 #' @family syllable functions
 #' @export
 #' @importFrom data.table setDT
 #' @examples
-#' sents <- c("I like chicken.", "I want eggs benidict for breakfast.")
+#' sents <- c("I like chicken.", "I want eggs Benedict for breakfast.")
 #' sum_vector(sents)
 #'
 #' data.frame(

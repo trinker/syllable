@@ -4,7 +4,7 @@
 #' in a string.
 #'
 #' @param x A character vector.
-#' @param \ldots ignored
+#' @param \ldots ignored.
 #' @return Returns a two integer vector of the total number of non-polysyllables
 #' (short) and polysyllables (poly) in the string.
 #' @family syllable functions

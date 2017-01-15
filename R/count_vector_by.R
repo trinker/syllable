@@ -5,13 +5,13 @@
 #' @param x A character vector.
 #' @param group The grouping variable(s).  Takes a single grouping variable or a list
 #' of 1 or more grouping variables.
-#' @param \ldots ignored
+#' @param \ldots ignored.
 #' @return Returns a named list of vectors of integer counts for each grouping variable.
 #' @family syllable functions
 #' @export
 #' @examples
 #' dat <- data.frame(
-#'    text = c("I like chicken.", "I want eggs benidict for breakfast.", "Really?"),
+#'    text = c("I like chicken.", "I want eggs Benedict for breakfast.", "Really?"),
 #'    group = c("A", "B", "A")
 #' )
 #' count_vector_by(dat$text, dat$group)

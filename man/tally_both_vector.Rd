@@ -4,12 +4,19 @@
 \alias{tally_both_vector}
 \title{Vector Tally of Short-Syllabic and Poly-Syllabic Words}
 \usage{
-tally_both_vector(x, ...)
+tally_both_vector(x, as.tibble = tibble_output(), ...)
 }
 \arguments{
 \item{x}{A character vector.}
 
-\item{\ldots}{ignored}
+\item{as.tibble}{logical.  If \code{TRUE} the output class will be set to a
+\pkg{tibble}, otherwise a \code{\link[data.table]{data.table}}.  Default
+checks \code{getOption("tibble.out")} as a logical.  If this is \code{NULL}
+the default \code{\link[textshape]{tibble_output}} will set \code{as.tibble}
+to \code{TRUE} if \pkg{dplyr} is loaded.  Otherwise, the output will be a
+\code{\link[data.table]{data.table}}.}
+
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a two column \code{\link[base]{data.frame}}
@@ -21,7 +28,7 @@ Short-syllabic (< 3 syllables) and poly-syllabic (>= 3 syllables) word
 tallies for the words in a vector of strings.
 }
 \examples{
-sents <- c("I like excellent chicken.", "I want eggs benedict for Festivus.")
+sents <- c("I like excellent chicken.", "I want eggs Benedict for Festivus.")
 tally_both_vector(sents)
 tally_both_vector(presidential_debates_2012$dialogue)
 }

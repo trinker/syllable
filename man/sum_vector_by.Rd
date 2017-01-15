@@ -4,7 +4,7 @@
 \alias{sum_vector_by}
 \title{Vector Syllable Sums By Grouping Variable(s)}
 \usage{
-sum_vector_by(x, group, ...)
+sum_vector_by(x, group, as.tibble = tibble_output(), ...)
 }
 \arguments{
 \item{x}{A character vector.}
@@ -12,7 +12,14 @@ sum_vector_by(x, group, ...)
 \item{group}{The grouping variable(s).  Takes a single grouping variable or a list
 of 1 or more grouping variables.}
 
-\item{\ldots}{ignored}
+\item{as.tibble}{logical.  If \code{TRUE} the output class will be set to a
+\pkg{tibble}, otherwise a \code{\link[data.table]{data.table}}.  Default
+checks \code{getOption("tibble.out")} as a logical.  If this is \code{NULL}
+the default \code{\link[textshape]{tibble_output}} will set \code{as.tibble}
+to \code{TRUE} if \pkg{dplyr} is loaded.  Otherwise, the output will be a
+\code{\link[data.table]{data.table}}.}
+
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a \code{\link[base]{data.frame}} (\code{\link[data.table]{data.table}}) of
@@ -23,7 +30,7 @@ Syllable sums for the words in the vectors of strings by grouping variables.
 }
 \examples{
 dat <- data.frame(
-   text = c("I like chicken.", "I want eggs benedict for breakfast.", "Really?"),
+   text = c("I like chicken.", "I want eggs Benedict for breakfast.", "Really?"),
    group = c("A", "B", "A")
 )
 sum_vector_by(dat$text, dat$group)

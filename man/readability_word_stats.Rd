@@ -4,12 +4,19 @@
 \alias{readability_word_stats}
 \title{Readability Word Statistics}
 \usage{
-readability_word_stats(x, ...)
+readability_word_stats(x, as.tibble = tibble_output(), ...)
 }
 \arguments{
 \item{x}{A character vector.}
 
-\item{\ldots}{ignored}
+\item{as.tibble}{logical.  If \code{TRUE} the output class will be set to a
+\pkg{tibble}, otherwise a \code{\link[data.table]{data.table}}.  Default
+checks \code{getOption("tibble.out")} as a logical.  If this is \code{NULL}
+the default \code{\link[textshape]{tibble_output}} will set \code{as.tibble}
+to \code{TRUE} if \pkg{dplyr} is loaded.  Otherwise, the output will be a
+\code{\link[data.table]{data.table}}.}
+
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a \code{\link[base]{data.frame}}
@@ -19,7 +26,7 @@ Returns a \code{\link[base]{data.frame}}
 Word statistics commonly used to calculate readability sores.
 }
 \examples{
-x <- c("I like excellent chicken.", "I want eggs benedict now.", "Really?",
+x <- c("I like excellent chicken.", "I want eggs Benedict now.", "Really?",
     "I thought that was good.  Well a bit weird.", "I know right!")
 readability_word_stats(x)
 

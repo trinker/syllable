@@ -3,7 +3,7 @@
 #' Poly-syllabic word tallies for the words in a vector of strings.
 #'
 #' @param x A character vector.
-#' @param \ldots ignored
+#' @param \ldots ignored.
 #' @return Returns a vector of integer tallies for the total number of
 #' polysyllable words for each string in the vector.
 #' @family syllable functions

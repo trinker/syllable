@@ -12,7 +12,7 @@ count_vector_by(x, group, ...)
 \item{group}{The grouping variable(s).  Takes a single grouping variable or a list
 of 1 or more grouping variables.}
 
-\item{\ldots}{ignored}
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a named list of vectors of integer counts for each grouping variable.
@@ -22,7 +22,7 @@ Syllable counts for the words in a vector of strings by grouping variables.
 }
 \examples{
 dat <- data.frame(
-   text = c("I like chicken.", "I want eggs benidict for breakfast.", "Really?"),
+   text = c("I like chicken.", "I want eggs Benedict for breakfast.", "Really?"),
    group = c("A", "B", "A")
 )
 count_vector_by(dat$text, dat$group)

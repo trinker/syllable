@@ -4,10 +4,12 @@
 \alias{compute_syllable_counts}
 \title{Compute Syllable Counts}
 \usage{
-compute_syllable_counts(x)
+compute_syllable_counts(x, ...)
 }
 \arguments{
 \item{x}{A character vector of terms.}
+
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a vector of syllable counts.

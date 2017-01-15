@@ -6,7 +6,13 @@
 #' @param x A character vector.
 #' @param group The grouping variable(s).  Takes a single grouping variable or a
 #' list of 1 or more grouping variables.
-#' @param \ldots ignored
+#' @param as.tibble logical.  If \code{TRUE} the output class will be set to a
+#' \pkg{tibble}, otherwise a \code{\link[data.table]{data.table}}.  Default
+#' checks \code{getOption("tibble.out")} as a logical.  If this is \code{NULL}
+#' the default \code{\link[textshape]{tibble_output}} will set \code{as.tibble}
+#' to \code{TRUE} if \pkg{dplyr} is loaded.  Otherwise, the output will be a
+#' \code{\link[data.table]{data.table}}.
+#' @param \ldots ignored.
 #' @return Returns a \code{\link[base]{data.frame}}
 #' (\code{\link[data.table]{data.table}}) of integer tallies for the total number
 #' of short syllable words for each string in the vector.
@@ -22,7 +28,7 @@
 #' with(presidential_debates_2012, tally_short_vector_by(dialogue, person))
 #' with(presidential_debates_2012, tally_short_vector_by(dialogue, list(role, time)))
 #' with(presidential_debates_2012, tally_short_vector_by(dialogue, list(person, time)))
-tally_short_vector_by <- function(x, group, ...){
+tally_short_vector_by <- function(x, group, as.tibble = tibble_output(), ...){
 
     count <- element_id <- NULL
 
@@ -46,6 +52,8 @@ tally_short_vector_by <- function(x, group, ...){
 
     data.table::setDT(long_dat)
 
-    long_dat[, list(n.words = length(stats::na.omit(count)),
+    out <- long_dat[, list(n.words = length(stats::na.omit(count)),
         short = sum(count < 3, na.rm = TRUE)),  keyby = G]
+
+    if_tibble(out, as.tibble = as.tibble)
 }

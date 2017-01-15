@@ -9,7 +9,7 @@ tally_mono_vector(x, ...)
 \arguments{
 \item{x}{A character vector.}
 
-\item{\ldots}{ignored}
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a vector of integer tallies for the total number of
@@ -19,7 +19,7 @@ monosyllable words for each string in the vector.
 Mono-syllabic word tallies for the words in a vector of strings.
 }
 \examples{
-sents <- c("I like chicken.", "I want eggs benedict for breakfast.")
+sents <- c("I like chicken.", "I want eggs Benedict for breakfast.")
 tally_mono_vector(sents)
 tally_mono_vector(presidential_debates_2012$dialogue)
 }

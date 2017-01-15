@@ -9,7 +9,7 @@ tally_short_vector(x, ...)
 \arguments{
 \item{x}{A character vector.}
 
-\item{\ldots}{ignored}
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a vector of integer tallies for the total number of

@@ -9,7 +9,7 @@ sum_vector(x, ...)
 \arguments{
 \item{x}{A character vector.}
 
-\item{\ldots}{ignored}
+\item{\ldots}{ignored.}
 }
 \value{
 Returns a list of vectors of integer counts.
@@ -18,7 +18,7 @@ Returns a list of vectors of integer counts.
 Syllable sums for the words in a vector of strings.
 }
 \examples{
-sents <- c("I like chicken.", "I want eggs benidict for breakfast.")
+sents <- c("I like chicken.", "I want eggs Benedict for breakfast.")
 sum_vector(sents)
 
 data.frame(

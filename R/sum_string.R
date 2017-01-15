@@ -3,7 +3,7 @@
 #' Syllable sum for the words in a single string.
 #'
 #' @param x A character string.
-#' @param \ldots ignored
+#' @param \ldots ignored.
 #' @return Returns a single integer of the total number of syllables in the string.
 #' @family syllable functions
 #' @export

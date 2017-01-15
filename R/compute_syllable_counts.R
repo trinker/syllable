@@ -5,6 +5,7 @@
 #' in a term.
 #'
 #' @param x A character vector of terms.
+#' @param \ldots ignored.
 #' @return Returns a vector of syllable counts.
 #' @export
 #' @examples
@@ -15,7 +16,7 @@
 #'     "mother", "answer", "study", "America")
 #'
 #' stats::setNames(compute_syllable_counts(terms), terms)
-compute_syllable_counts <- function(x) {
+compute_syllable_counts <- function(x, ...) {
 
     m <- gsub("[ye]{1,2}ing", "XX", tolower(x))
     m <- gsub("'s", "", m)
