@@ -10,6 +10,7 @@ Status](https://travis-ci.org/trinker/syllable.svg?branch=master)](https://travi
 [![Coverage
 Status](https://coveralls.io/repos/trinker/syllable/badge.svg?branch=master)](https://coveralls.io/r/trinker/syllable?branch=master)
 [![DOI](https://zenodo.org/badge/5398/trinker/syllable.svg)](https://zenodo.org/badge/latestdoi/5398/trinker/syllable)
+[![](http://cranlogs.r-pkg.org/badges/syllable)](https://cran.r-project.org/package=syllable)
 <a href="https://img.shields.io/badge/Version-0.1.3-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.3-orange.svg" alt="Version"/></a>
 </p>
 <img src="inst/syllable_logo/r_syllable.png" width="200" alt="qdapRegex Logo">
