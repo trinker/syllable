@@ -145,7 +145,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.4.0 by xtable 1.8-2 package -->
-<!-- Sat Jan 28 16:28:14 2017 -->
+<!-- Sat Jan 28 16:31:16 2017 -->
 <table>
 <tr>
 <td>
