@@ -4,20 +4,13 @@
 \alias{tally_mono_vector_by}
 \title{Vector Tally of Mono-Syllabic Words By Grouping Variable(s)}
 \usage{
-tally_mono_vector_by(x, group, as.tibble = tibble_output(), ...)
+tally_mono_vector_by(x, group, ...)
 }
 \arguments{
 \item{x}{A character vector.}
 
 \item{group}{The grouping variable(s).  Takes a single grouping variable or a list
 of 1 or more grouping variables.}
-
-\item{as.tibble}{logical.  If \code{TRUE} the output class will be set to a
-\pkg{tibble}, otherwise a \code{\link[data.table]{data.table}}.  Default
-checks \code{getOption("tibble.out")} as a logical.  If this is \code{NULL}
-the default \code{\link[textshape]{tibble_output}} will set \code{as.tibble}
-to \code{TRUE} if \pkg{dplyr} is loaded.  Otherwise, the output will be a
-\code{\link[data.table]{data.table}}.}
 
 \item{\ldots}{ignored.}
 }

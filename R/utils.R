@@ -119,14 +119,14 @@ sent_count <- function(x, ...){
 
 #sent_count <- function(x) stringi::stri_count_regex(x, "(?<!\\w\\.\\w.)(?<![A-Z][a-z]\\.)(?<=\\.|\\?|\\!)\\s") + 1
 
-## convert a data.table to tibble
-set_tibble <- function(x, ...){
-    stopifnot(is.data.frame(x))
-    class(x) <- c("tbl_df", "tbl", "data.frame")
-    x
-}
-
-if_tibble <- function(x, as.tibble, ...){
-    if(!isTRUE(as.tibble)) return(x)
-    set_tibble(x)
-}
+# ## convert a data.table to tibble
+# set_tibble <- function(x, ...){
+#     stopifnot(is.data.frame(x))
+#     class(x) <- c("tbl_df", "tbl", "data.frame")
+#     x
+# }
+#
+# if_tibble <- function(x, as.tibble, ...){
+#     if(!isTRUE(as.tibble)) return(x)
+#     set_tibble(x)
+# }

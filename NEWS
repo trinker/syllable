@@ -30,6 +30,13 @@ IMPROVEMENTS
 
 CHANGES
 
+* `as.tibble` removed from all function arguments.  This was a nice interactive
+  feature that made programming very difficult to reason about.  Having an
+  environment dependant output would result in no adoption of the **syllable**
+  package as a dependency.  The problem was so egregious and the package infant
+  enough, that removal without deprecation was warranted.
+
+
 
 syllable 0.1.0 - 0.1.2
 ----------------------------------------------------------------

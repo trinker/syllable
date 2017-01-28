@@ -5,12 +5,6 @@
 #' @param x A character vector.
 #' @param group The grouping variable(s).  Takes a single grouping variable or a list
 #' of 1 or more grouping variables.
-#' @param as.tibble logical.  If \code{TRUE} the output class will be set to a
-#' \pkg{tibble}, otherwise a \code{\link[data.table]{data.table}}.  Default
-#' checks \code{getOption("tibble.out")} as a logical.  If this is \code{NULL}
-#' the default \code{\link[textshape]{tibble_output}} will set \code{as.tibble}
-#' to \code{TRUE} if \pkg{dplyr} is loaded.  Otherwise, the output will be a
-#' \code{\link[data.table]{data.table}}.
 #' @param \ldots ignored.
 #' @return Returns a \code{\link[base]{data.frame}} (\code{\link[data.table]{data.table}}) of
 #' syllable sums (count) by grouping variable.
@@ -25,7 +19,7 @@
 #' sum_vector_by(dat$text, dat$group)
 #'
 #' with(presidential_debates_2012, sum_vector_by(dialogue, list(person, time)))
-sum_vector_by <- function(x, group, as.tibble = tibble_output(), ...){
+sum_vector_by <- function(x, group, ...){
 
     count <- NULL
 
@@ -49,6 +43,6 @@ sum_vector_by <- function(x, group, as.tibble = tibble_output(), ...){
 
     data.table::setDT(long_dat)
 
-    if_tibble(long_dat[, list(n.words = length(stats::na.omit(count)),
-        count = sum(count, na.rm = TRUE)), keyby = G], as.tibble = as.tibble)
+    long_dat[, list(n.words = length(stats::na.omit(count)),
+        count = sum(count, na.rm = TRUE)), keyby = G]
 }

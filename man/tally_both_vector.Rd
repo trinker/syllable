@@ -4,17 +4,10 @@
 \alias{tally_both_vector}
 \title{Vector Tally of Short-Syllabic and Poly-Syllabic Words}
 \usage{
-tally_both_vector(x, as.tibble = tibble_output(), ...)
+tally_both_vector(x, ...)
 }
 \arguments{
 \item{x}{A character vector.}
-
-\item{as.tibble}{logical.  If \code{TRUE} the output class will be set to a
-\pkg{tibble}, otherwise a \code{\link[data.table]{data.table}}.  Default
-checks \code{getOption("tibble.out")} as a logical.  If this is \code{NULL}
-the default \code{\link[textshape]{tibble_output}} will set \code{as.tibble}
-to \code{TRUE} if \pkg{dplyr} is loaded.  Otherwise, the output will be a
-\code{\link[data.table]{data.table}}.}
 
 \item{\ldots}{ignored.}
 }

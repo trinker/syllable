@@ -3,12 +3,6 @@
 #' Word statistics commonly used to calculate readability sores.
 #'
 #' @param x A character vector.
-#' @param as.tibble logical.  If \code{TRUE} the output class will be set to a
-#' \pkg{tibble}, otherwise a \code{\link[data.table]{data.table}}.  Default
-#' checks \code{getOption("tibble.out")} as a logical.  If this is \code{NULL}
-#' the default \code{\link[textshape]{tibble_output}} will set \code{as.tibble}
-#' to \code{TRUE} if \pkg{dplyr} is loaded.  Otherwise, the output will be a
-#' \code{\link[data.table]{data.table}}.
 #' @param \ldots ignored.
 #' @return Returns a \code{\link[base]{data.frame}}
 #' (\code{\link[data.table]{data.table}}) readability word statistics.
@@ -21,7 +15,7 @@
 #' \dontrun{
 #' readability_word_stats(presidential_debates_2012$dialogue)
 #' }
-readability_word_stats <- function(x, as.tibble = tibble_output(), ...){
+readability_word_stats <- function(x, ...){
 
     n.complex <- text.var <- count <- element_id <- NULL
 
@@ -65,7 +59,7 @@ readability_word_stats <- function(x, as.tibble = tibble_output(), ...){
 
     data.table::setcolorder(out, c("n.sents", "n.words", "n.chars", "n.sylls",
         "n.shorts", "n.polys", "n.complexes"))
-    if_tibble(out[], as.tibble = as.tibble)
+    out[]
 }
 
 .common_polysyllabic_proper_nouns <- c("aberdeen", "abilene", "abraham", "afghanistan", "african",

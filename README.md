@@ -144,7 +144,7 @@ The available syllable functions that follow the format of
 `action_object` are:
 
 <!-- html table generated in R 3.4.0 by xtable 1.8-2 package -->
-<!-- Thu Jan 19 22:31:46 2017 -->
+<!-- Sat Jan 28 16:28:14 2017 -->
 <table>
 <tr>
 <td>
@@ -308,11 +308,9 @@ Sum the Syllables In a Vector of Strings by Grouping Variable(s)
     )
     sum_vector_by(dat$text, dat$group)
 
-    ## # A tibble: 2 x 3
     ##    group n.words count
-    ##   <fctr>   <int> <dbl>
-    ## 1      A       4     7
-    ## 2      B       6     9
+    ## 1:     A       4     7
+    ## 2:     B       6     9
 
 Tally the Short/Poly-Syllabic Words by Group(s)
 -----------------------------------------------
@@ -323,43 +321,47 @@ Tally the Short/Poly-Syllabic Words by Group(s)
     )
     tally_both_vector_by(dat$text, dat$group)
 
-    ## # A tibble: 2 x 4
-    ##    group n.words short  poly
-    ##   <fctr>   <int> <int> <int>
-    ## 1      A       5     3     2
-    ## 2      B       5     4     1
+    ##    group n.words short poly
+    ## 1:     A       5     3    2
+    ## 2:     B       5     4    1
 
     with(presidential_debates_2012, tally_both_vector_by(dialogue, person))
 
-    ## # A tibble: 6 x 4
-    ##      person n.words short  poly
-    ##      <fctr>   <int> <int> <int>
-    ## 1     OBAMA   18319 16286  2033
-    ## 2    ROMNEY   19924 17858  2066
-    ## 3   CROWLEY    1672  1525   147
-    ## 4    LEHRER     765   674    91
-    ## 5  QUESTION     583   486    97
-    ## 6 SCHIEFFER    1445  1289   156
+    ##       person n.words short poly
+    ## 1:     OBAMA   18319 16286 2033
+    ## 2:    ROMNEY   19924 17858 2066
+    ## 3:   CROWLEY    1672  1525  147
+    ## 4:    LEHRER     765   674   91
+    ## 5:  QUESTION     583   486   97
+    ## 6: SCHIEFFER    1445  1289  156
 
 Readability Word Statistics by Grouping Variable(s)
 ---------------------------------------------------
 
     with(presidential_debates_2012, readability_word_stats_by(dialogue, list(person, time)))
 
-    ## # A tibble: 10 x 9
-    ##       person   time n.sents n.words n.chars n.sylls n.shorts n.polys
-    ## *     <fctr> <fctr>   <int>   <int>   <int>   <dbl>    <int>   <int>
-    ## 1      OBAMA time 1     179    3599   16002    5221     3221     378
-    ## 2      OBAMA time 2     494    7477   32459   10654     6696     781
-    ## 3      OBAMA time 3     405    7243   32288   10675     6369     874
-    ## 4     ROMNEY time 1     279    4085   17984    5875     3646     439
-    ## 5     ROMNEY time 2     560    7536   32504   10720     6788     748
-    ## 6     ROMNEY time 3     569    8303   35824   11883     7424     879
-    ## 7    CROWLEY time 2     165    1672    6904    2308     1525     147
-    ## 8     LEHRER time 1      87     765    3256    1087      674      91
-    ## 9   QUESTION time 2      40     583    2765     930      486      97
-    ## 10 SCHIEFFER time 3     133    1445    6234    2058     1289     156
-    ## # ... with 1 more variables: n.complexes <int>
+    ##        person   time n.sents n.words n.chars n.sylls n.shorts n.polys
+    ##  1:     OBAMA time 1     179    3599   16002    5221     3221     378
+    ##  2:     OBAMA time 2     494    7477   32459   10654     6696     781
+    ##  3:     OBAMA time 3     405    7243   32288   10675     6369     874
+    ##  4:    ROMNEY time 1     279    4085   17984    5875     3646     439
+    ##  5:    ROMNEY time 2     560    7536   32504   10720     6788     748
+    ##  6:    ROMNEY time 3     569    8303   35824   11883     7424     879
+    ##  7:   CROWLEY time 2     165    1672    6904    2308     1525     147
+    ##  8:    LEHRER time 1      87     765    3256    1087      674      91
+    ##  9:  QUESTION time 2      40     583    2765     930      486      97
+    ## 10: SCHIEFFER time 3     133    1445    6234    2058     1289     156
+    ##     n.complexes
+    ##  1:         378
+    ##  2:         781
+    ##  3:         873
+    ##  4:         439
+    ##  5:         746
+    ##  6:         878
+    ##  7:         147
+    ##  8:          91
+    ##  9:          97
+    ## 10:         156
 
 Visualize Poly Syllable Distributions
 -------------------------------------
