@@ -17,6 +17,22 @@ And constructed with the following guidelines:
 * Bug fixes and misc changes bumps the patch
 
 
+
+syllable 0.2.0 -
+----------------------------------------------------------------
+
+**BUG FIXES**
+
+**NEW FEATURES**
+
+**MINOR FEATURES**
+
+**IMPROVEMENTS**
+
+**CHANGES**
+
+
+
 syllable 0.1.3
 ----------------------------------------------------------------
 
