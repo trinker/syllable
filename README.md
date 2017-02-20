@@ -11,7 +11,7 @@ Status](https://travis-ci.org/trinker/syllable.svg?branch=master)](https://travi
 Status](https://coveralls.io/repos/trinker/syllable/badge.svg?branch=master)](https://coveralls.io/r/trinker/syllable?branch=master)
 [![DOI](https://zenodo.org/badge/5398/trinker/syllable.svg)](https://zenodo.org/badge/latestdoi/5398/trinker/syllable)
 [![](http://cranlogs.r-pkg.org/badges/syllable)](https://cran.r-project.org/package=syllable)
-<a href="https://img.shields.io/badge/Version-0.1.3-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.3-orange.svg" alt="Version"/></a>
+<a href="https://img.shields.io/badge/Version-0.2.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.2.0-orange.svg" alt="Version"/></a>
 </p>
 <img src="inst/syllable_logo/r_syllable.png" width="200" alt="qdapRegex Logo">
 
@@ -51,39 +51,39 @@ Actions
 The following table outlines the actions. Example Output correspond to
 this string: `"I like chicken sandwiches."`.
 
-<table style="width:136%;">
+<table>
 <colgroup>
-<col width="20%" />
-<col width="40%" />
-<col width="33%" />
-<col width="41%" />
+<col width="15%" />
+<col width="29%" />
+<col width="24%" />
+<col width="30%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Action</th>
-<th align="left">Description</th>
-<th align="left">Returns</th>
-<th align="left">Example Output</th>
+<th>Action</th>
+<th>Description</th>
+<th>Returns</th>
+<th>Example Output</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>count</code></td>
-<td align="left">One integer per word</td>
-<td align="left">A vector per string</td>
-<td align="left">1, 1, 2, 3</td>
+<td><code>count</code></td>
+<td>One integer per word</td>
+<td>A vector per string</td>
+<td>1, 1, 2, 3</td>
 </tr>
 <tr class="even">
-<td align="left"><code>sum</code></td>
-<td align="left">Sum of syllable counts</td>
-<td align="left">An integer per string</td>
-<td align="left">7</td>
+<td><code>sum</code></td>
+<td>Sum of syllable counts</td>
+<td>An integer per string</td>
+<td>7</td>
 </tr>
 <tr class="odd">
-<td align="left"><code>tally</code>*</td>
-<td align="left">Sum of syllable attributes</td>
-<td align="left">An integer per string</td>
-<td align="left">pollysyllable tallies = 1</td>
+<td><code>tally</code>*</td>
+<td>Sum of syllable attributes</td>
+<td>An integer per string</td>
+<td>pollysyllable tallies = 1</td>
 </tr>
 </tbody>
 </table>
@@ -100,21 +100,21 @@ The following table outlines the objects acted upon:
 <table>
 <thead>
 <tr class="header">
-<th align="left">Object</th>
-<th align="left">Description</th>
-<th align="left">Example</th>
+<th>Object</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>string</code></td>
-<td align="left">A character string</td>
-<td align="left"><code>&quot;I like chicken sandwiches.&quot;</code></td>
+<td><code>string</code></td>
+<td>A character string</td>
+<td><code>&quot;I like chicken sandwiches.&quot;</code></td>
 </tr>
 <tr class="even">
-<td align="left"><code>vector</code>*</td>
-<td align="left">A vector of character strings</td>
-<td align="left"><code>c(&quot;I like it.&quot;, &quot;Look out!&quot;)</code></td>
+<td><code>vector</code>*</td>
+<td>A vector of character strings</td>
+<td><code>c(&quot;I like it.&quot;, &quot;Look out!&quot;)</code></td>
 </tr>
 </tbody>
 </table>
@@ -144,8 +144,8 @@ as `sum_vector(x)` it would be less efficient.
 The available syllable functions that follow the format of
 `action_object` are:
 
-<!-- html table generated in R 3.4.0 by xtable 1.8-2 package -->
-<!-- Sat Jan 28 16:31:16 2017 -->
+<!-- html table generated in R 3.3.2 by xtable 1.8-2 package -->
+<!-- Sun Feb 19 20:10:08 2017 -->
 <table>
 <tr>
 <td>
