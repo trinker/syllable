@@ -22,7 +22,7 @@ knit_hooks$set(htmlcap = function(before, options, envir) {
     }
     })
 knitr::opts_knit$set(self.contained = TRUE, cache = FALSE)
-knitr::opts_chunk$set(fig.path = "inst/figure/")
+knitr::opts_chunk$set(fig.path = "tools/figure/")
 ```
 
 
@@ -33,7 +33,7 @@ knitr::opts_chunk$set(fig.path = "inst/figure/")
 [![](http://cranlogs.r-pkg.org/badges/syllable)](https://cran.r-project.org/package=syllable)
 `r verbadge`
 
-<img src="inst/syllable_logo/r_syllable.png" width="200" alt="qdapRegex Logo">  
+![](tools/syllable_logo/r_syllable.png)
 
 
 **syllable** is a small collection of tools for counting syllables and polysyllables.  The tools rely 

@@ -13,7 +13,8 @@ Status](https://coveralls.io/repos/trinker/syllable/badge.svg?branch=master)](ht
 [![](http://cranlogs.r-pkg.org/badges/syllable)](https://cran.r-project.org/package=syllable)
 <a href="https://img.shields.io/badge/Version-0.2.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.2.0-orange.svg" alt="Version"/></a>
 </p>
-<img src="inst/syllable_logo/r_syllable.png" width="200" alt="qdapRegex Logo">
+
+![](tools/syllable_logo/r_syllable.png)
 
 **syllable** is a small collection of tools for counting syllables and
 polysyllables. The tools rely primarily on
@@ -144,8 +145,8 @@ as `sum_vector(x)` it would be less efficient.
 The available syllable functions that follow the format of
 `action_object` are:
 
-<!-- html table generated in R 3.3.2 by xtable 1.8-2 package -->
-<!-- Sun Feb 19 20:10:08 2017 -->
+<!-- html table generated in R 3.3.3 by xtable 1.8-2 package -->
+<!-- Fri Apr 14 12:57:45 2017 -->
 <table>
 <tr>
 <td>
@@ -232,6 +233,7 @@ tally_poly_vector_by
 <p class="caption">
 <b><em>Available Variable Functions</em></b>
 </p>
+
 Installation
 ============
 
@@ -390,7 +392,7 @@ Visualize Poly Syllable Distributions
             xlab("Duration (sentences)") +
             theme_bw() 
 
-![](inst/figure/unnamed-chunk-10-1.png)
+![](tools/figure/unnamed-chunk-10-1.png)
 
 Visualize Poly Syllable Distributions by Group
 ----------------------------------------------
@@ -416,4 +418,4 @@ Visualize Poly Syllable Distributions by Group
             ylab("Usage") +
             theme_bw()
 
-![](inst/figure/unnamed-chunk-11-1.png)
+![](tools/figure/unnamed-chunk-11-1.png)
